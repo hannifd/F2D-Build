@@ -1,0 +1,77 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<h1 class="form-title heading-xlarge">DVLA Drivers - Fitness 2 Drive</h1>
+
+	<div id="content">
+
+		<div class="inner-block">
+
+			<h2 class="heading-large">Prototypes</h2>
+
+			<div class="form-group">
+				<div class="grid-row">
+					<div class="column-quarter" style="text-align: center; border-right: 1px solid #c0c0c0;">
+						<h2 class="heading-small">Alpha Prototype</h2>
+						<a href="/alpha/landing?verify=/verify/verify-2&auth=/alpha/">Verify ON</a> &middot;
+						<a href="/alpha/landing?verify=&auth=">Verify OFF</a><br/>
+					</div>
+					<div class="column-quarter" style="text-align: center; border-right: 1px solid #c0c0c0;">
+						<h2 class="heading-small">Single Questions</h2>
+						<a href="/demos/p3/landing?verify=/verify/verify-2&auth=/demos/p3/">Verify ON</a> &middot;
+						<a href="/demos/p3/landing?verify=&auth=">Verify OFF</a><br/>
+					</div>
+					<div class="column-quarter" style="text-align: center; border-right: 1px solid #c0c0c0;">
+						<h2 class="heading-small">Visual Prototype</h2>
+						<a href="/demos/p2/landing?verify=/verify/verify-2&auth=/demos/p2/">Verify ON</a> &middot;
+						<a href="/demos/p2/landing?verify=&auth=">Verify OFF</a><br/>
+					</div>
+					<div class="column-quarter" style="text-align: center;">
+						<h2 class="heading-small">Initial Prototype</h2>
+						<a href="/demos/p1/landing?verify=/verify/verify-2&auth=/demos/p1/">Verify ON</a> &middot;
+						<a href="/demos/p1/landing?verify=&auth=">Verify OFF</a><br/>
+					</div>
+				</div>
+			</div>
+
+			<br/><br/><br/>
+
+			<h2 class="heading-large">Resources</h2>
+			<div>
+			<a href="https://github.com/demosgov/govuk_prototype_kit/wiki">GOV.UK kit documentation</a><br/>
+			<a href="http://govuk-elements.herokuapp.com/snippets/">Guide to GOV.UK elements HTML</a><br/>
+			<a href="https://www.gov.uk/service-manual">Service design manual</a><br/>
+			<a href="https://www.gov.uk/design-principles">Government Digital Service Design Principles</a><br/>
+			</div>
+
+		</div>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

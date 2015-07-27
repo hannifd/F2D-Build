@@ -1,0 +1,798 @@
+// Import GOV.UK elements, this will import the frontend toolkit and some base styles.
+// Take a look at elements.scss to see which files are imported.
+@import 'elements';
+
+// Set up your page container, using the frontend toolkit grid layout.
+
+// Content wraps the entire site content block, between the header and footer.
+// See elements _layout.scss line 8.
+#content {
+  @include site-width-container;
+  @include contain-floats;
+  display: block;
+  padding-bottom: $gutter;
+  @include media(desktop) {
+    padding-bottom: $gutter*3;
+  }
+}
+
+// Here's an example heading
+// See elements _typography.scss line 11.
+#content h1 {
+  @include bold-48();
+  margin-top: $gutter-half;
+  margin-bottom: $gutter;
+  @include media(tablet) {
+    margin-top: $gutter;
+    margin-bottom: $gutter*2;
+  }
+}
+
+// Set up the phase banner
+// See elements _layout.scss line 22.
+.alpha-banner  {
+  @include phase-banner(alpha); // Change this to (beta) for a beta banner
+  strong {
+    text-transform: uppercase;
+  }
+}
+.alpha-tag {
+  @include phase-tag(alpha); // Change this to (beta) for a beta tag
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
+// either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+
+.button-secondary {
+    @include button ($grey-3);
+    font-family: "nta", Arial, sans-serif;
+  color: black;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 400;
+  }
+
+.dwp-permission-group {
+background-color: #D5E8F3;
+padding: 19px;
+//border-radius: 4px;
+//border-width: 1px;
+//border-color: #CBCBCB;
+//border-style: solid;
+margin: 0.5em 0 0 0;
+}
+
+.success-group {
+background-color: #249285;
+padding: 19px;
+//border-radius: 4px;
+//border-width: 1px;
+//border-color: #CBCBCB;
+//border-style: solid;
+margin: 0.5em 0 0 0;
+}
+
+.form-control-noborders{
+  font-family: "nta", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 0.8;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  //-webkit-box-sizing: border-box;
+  //-moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #fff;
+  border: 2px solid blue;
+  
+  //-webkit-appearance: none;
+  border-radius: 0; }
+  @media (max-width: 640px) {
+    .form-control-dropdown {
+      font-size: 13px;
+      line-height: 0.8; } }
+  @media (min-width: 641px) {
+    .form-control-dropdown {
+      width: 50%; } }
+
+      .column-full {
+  padding: 0 15px;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .column-full {
+      float: left;
+      width: 100%; } }
+
+     .column-eighth {
+  padding: 0 15px;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .column-eighth  {
+      float: left;
+      width: 8%; } }
+
+.starthidden {
+    display: none;
+  
+  }
+
+
+ 
+
+    .form-control-9-10 {
+  width: 100%; }
+  @media (min-width: 641px) {
+    .form-control-9-10 {
+      width: 100%; } }
+
+
+  .double {
+  zoom:2;
+  transform:scale(2);
+  -ms-transform:scale(2);
+  -webkit-transform:scale(2);
+  -o-transform:scale(2);
+  -moz-transform:scale(2);
+  transform-origin:0 0;
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -o-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
+
+// Typography
+
+.heading-xlarge {
+  margin: 1em 0 .5em;
+}
+
+// Landing
+
+.need {
+  margin: 2em 0;
+}
+
+.need img {
+  margin-right: 1em;
+}
+
+// Panel and help notice styles
+
+.panel-indent .heading-medium {
+  margin:0;
+}
+
+.panel {
+  background-color: #DEE0E2;
+}
+
+.panel label {
+    padding:1em 2em;
+}
+
+.help-notice {
+    background: url("/public/images/icon-information.png") no-repeat scroll;
+}
+
+.important-notice {
+    background: url("/public/images/icon-important.png") no-repeat scroll;
+    padding: 0.1em 0px 0.1em 2.5em;
+}
+
+.help-notice h2 {
+  padding: 0.4em 0px 0px 2em;
+}
+
+.important-notice p {
+  font-weight: 600
+}
+
+@media (min-width: 640px) {
+  .help-notice {background-position: 0 0.5em;}
+  .help-notice h2 {padding-left: 1.5em;}
+}
+
+// More (tabbed section) styles
+
+.more {
+  margin-top: 2em;
+}
+
+.nav-tabs {
+    zoom: 1;
+    background: #fff;
+    padding: 0;
+    position: relative
+}
+.nav-tabs:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+.nav-tabs ol,
+.nav-tabs ul,
+.nav-tabs .tabs-nav {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5
+}
+@media (max-width: 640px) {
+    .nav-tabs ol,
+    .nav-tabs ul,
+    .nav-tabs .tabs-nav {
+        float: none;
+        margin: 0 -16px
+    }
+}
+.nav-tabs li,
+.nav-tabs .tabs-nav li {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    padding: 0;
+    margin: 0;
+    float: left
+}
+@media (max-width: 640px) {
+    .nav-tabs li,
+    .nav-tabs .tabs-nav li {
+        font-size: 14px;
+        line-height: 1.14286
+    }
+}
+@media (max-width: 640px) {
+    .nav-tabs li,
+    .nav-tabs .tabs-nav li {
+        float: none
+    }
+}
+.nav-tabs li a,
+.nav-tabs .tabs-nav li a {
+    border: solid 1px #fff;
+    border-bottom: none;
+    float: left;
+    height: 2.25em;
+    line-height: 2.25em;
+    margin-bottom: -1px;
+    padding: 0 1em 0 1em;
+    position: relative;
+    text-align: center;
+    top: 0
+}
+@media (max-width: 640px) {
+    .nav-tabs li a,
+    .nav-tabs .tabs-nav li a {
+        display: block;
+        position: static;
+        float: none;
+        height: auto;
+        line-height: 3.5em;
+        padding: 0 16px;
+        text-align: left;
+        margin-bottom: 0;
+        border-bottom: 1px solid #bfc1c3
+    }
+}
+.nav-tabs li a:hover,
+.nav-tabs .tabs-nav li a:hover {
+    background-color: #bfc1c3
+}
+.nav-tabs li.active a,
+.nav-tabs .tabs-nav li.active a {
+    background-color: #fff;
+    border: solid 1px #bfc1c3;
+    border-bottom: solid 1px #fff;
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+    z-index: 5
+}
+@media (max-width: 640px) {
+    .nav-tabs li.active a,
+    .nav-tabs .tabs-nav li.active a {
+        border: none;
+        border-bottom: 1px solid #bfc1c3
+    }
+}
+.nav-tabs li.active a:hover,
+.nav-tabs .tabs-nav li.active a:hover {
+    color: inherit
+}
+.nav-tabs li:first-child a,
+.nav-tabs .tabs-nav li:first-child a {
+    margin-left: 0
+}
+@media (max-width: 640px) {
+    .nav-tabs li:first-child a,
+    .nav-tabs .tabs-nav li:first-child a {
+        border-left: none;
+        border-top: 1px solid #bfc1c3
+    }
+}
+@media (max-width: 640px) {
+    .tab-content {
+        margin: 0 -1em
+    }
+}
+.tab-content .tab-pane {
+    padding: 1em 1em 0 1em;
+    border-top: solid 1px #bfc1c3;
+    clear: both;
+    width: auto
+}
+@media (max-width: 640px) {
+    .tab-content .tab-pane {
+        border-top: none;
+        padding: 0
+    }
+}
+.tab-content .inner {
+    padding: 0em 2.5em 1em
+}
+@media (max-width: 640px) {
+    .tab-content .inner {
+        padding: 0 1em 1em;
+        border-bottom: solid 1px #C9D0D0
+    }
+}
+.tab-content h1.visuallyhidden+h2 {
+    margin-top: 2em
+}
+.tab-content p {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0
+}
+.tab-content em {
+    font-style: normal;
+    font-weight: bold
+}
+.tab-content nav {
+    margin: 1em -1.375em 0
+}
+.js-tab-content .programme-progression li,
+.js-tab-content .js-heading-tab {
+    border-bottom: solid 1px #bfc1c3;
+    list-style: none
+}
+.js-tab-content .programme-progression li a,
+.js-tab-content .programme-progression li h1,
+.js-tab-content .js-heading-tab a,
+.js-tab-content .js-heading-tab h1 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.875;
+    font-weight: 400;
+    text-transform: none;
+    background: #FFF url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-be497d9d3039e0119094769114cd19d2.png) no-repeat 100% -2px;
+    display: block;
+    padding: 0 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: underline;
+    top: 0
+}
+@media (max-width: 640px) {
+    .js-tab-content .programme-progression li a,
+    .js-tab-content .programme-progression li h1,
+    .js-tab-content .js-heading-tab a,
+    .js-tab-content .js-heading-tab h1 {
+        font-size: 18px;
+        line-height: 2.64706
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 20 / 10),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .js-tab-content .programme-progression li a,
+    .js-tab-content .programme-progression li h1,
+    .js-tab-content .js-heading-tab a,
+    .js-tab-content .js-heading-tab h1 {
+        background-image: url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-2x-01ad9e5ba6ea43304e6c5f75ae890e2a.png);
+        background-size: 45px 90px
+    }
+}
+.js-tab-content .programme-progression li a:hover,
+.js-tab-content .programme-progression li h1:hover,
+.js-tab-content .js-heading-tab a:hover,
+.js-tab-content .js-heading-tab h1:hover {
+    background-color: #dee0e2
+}
+.js-tab-content .programme-progression li.active,
+.js-tab-content .js-heading-tab.active {
+    text-decoration: none
+}
+.js-tab-content .programme-progression li.active a,
+.js-tab-content .programme-progression li.active h1,
+.js-tab-content .js-heading-tab.active a,
+.js-tab-content .js-heading-tab.active h1 {
+    background-position: 100% -48px;
+    background-color: #dee0e2;
+    color: #0b0c0c;
+    text-decoration: none
+}
+.js-tab-content .js-heading-tab {
+    margin: 0;
+    clear: both
+}
+.js-tab-content .js-heading-tab h1 {
+    padding: 0
+}
+.js-tab-content .tab-shiftlink {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    position: absolute;
+    left: -9999em
+}
+@media (max-width: 640px) {
+    .js-tab-content .tab-shiftlink {
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
+@media (max-width: 640px) {
+    .js-tab-content .tab-shiftlink {
+        position: static;
+        left: auto
+    }
+}
+@media (max-width: 640px) {
+    .js-tab-content .js-tab-container {
+        min-height: 0
+    }
+    .js-tab-content .js-tab-pane {
+        border-bottom: solid 1px #bfc1c3
+    }
+    .js-tab-content .js-tab-container:first-child {
+        border-top: solid 1px #bfc1c3
+    }
+}
+
+.transaction .js-tab-content {
+    overflow: hidden
+}
+
+.process-step {
+  color: #a0a0a0;
+}
+
+#search {
+  background-image: url('../images/icons/search-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5px 1px;
+  background-color: transparent;
+  padding-left: 35px;
+}
+
+#search-term {
+  color: #202020;
+  font-weight: bold;
+  display: inline;
+}
+
+div.main-border {
+  border: 1px solid #c0c0c0;
+  text-align: left;
+  vertical-align: top;
+}
+
+div.centered {
+   text-align: center;
+   vertical-align: top;
+}
+
+div.icon-tick {
+  background: url('../images/icons/icon-tick.png');
+}
+
+div.icon-cross {
+  background: url('../images/icons/icon-cross.png');
+}
+
+div.icon-question-mark {
+  background: url('../images/icons/icon-question-mark.png');
+}
+
+div.icon-tick, div.icon-cross, div.icon-question-mark {
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-color: transparent;
+  padding: 3px 0px 6px 45px;
+}
+
+.icon-automatic-gears {
+  padding: 0 0 $gutter 0;
+
+  @include media(tablet) {
+    padding: $gutter 0 0 0;
+  }
+}
+
+
+.visionTestIcon {
+  max-width: 45%;
+  /*margin-top: 2em;
+  float: left;
+  margin-bottom: 1em;
+  padding: 5%;
+  border: 1px solid #BFC1C3;*/
+  padding-left: 4%;
+}
+
+.tableQuestion {
+  font-weight: 700;
+}
+
+.eye-icon {
+  max-width: 80px;
+}
+
+.left-eye-icon {
+  padding-left: 12px;
+}
+
+.right-eye-icon {
+  padding-left: 16px;
+}
+
+// Special controls
+// Accordian styles
+// ==========================================================================
+
+#accordion {
+  margin: $gutter 0;
+}
+
+.accordian-section {
+  position: relative;
+}
+
+#accordion h3 {
+  border: 1px solid $panel-colour;
+  background: $panel-colour url(../images/icons/accordian-arrow.png) no-repeat .1em .1em;
+  margin: $gutter 0 0 0;
+  padding: .75em 1em .75em 2.5em;
+  cursor: pointer;
+  position: relative;
+
+ @include media(tablet) {
+    background-position: .2em .5em;
+    padding-left: 2em;
+  }
+}
+
+#accordion h3.ui-accordion-header-active {
+  background-position: 0 -2.5em;
+ 
+ @include media(tablet) {
+    background-position: .2em -1.5em;
+  }
+}
+
+#accordion h3:after {
+  position: absolute;
+  top: .9em;
+  right: .9em;
+}
+
+#accordion h3.car:after {
+  content: url(../images/icons/licence-icon-b-1x.png);
+}
+
+#accordion h3.motorcycle:after {
+  content: url(../images/icons/licence-icon-a-1x.png);
+}
+
+#accordion h3.moped:after {
+  content: url(../images/icons/licence-icon-am-1x.png);
+}
+
+#accordion div {
+  border: 1px solid $panel-colour;
+  border-top: none;
+}
+#accordion .block-label {
+  background-color: $page-colour;
+  border: none;
+  float: none;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+
+// Large hit area
+// Radio buttons & checkboxes
+// ==========================================================================
+
+// Inline block labels
+.large-block-label {
+  display: block;
+  position: relative;
+  color: #0b0c0c;
+  padding: 20px 20px 20px 70px;
+  cursor: pointer;
+  background: #dee0e2;
+  border: 1px solid #dee0e2;
+  margin: 10px 0;
+}
+
+.large-block-label em {
+    display: block;
+    color: #6f777b;
+    font-style: normal;
+}
+
+.large-block-label input {
+    display: none;
+}
+
+.large-block-label .bounding-input {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid #0b0c0c;
+    background: #fff;
+}
+
+.large-block-label .bounding-input-radio {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+    border-radius: 20px;
+}
+
+label.selected.large-block-label  {
+    outline: 3px solid #FFBF47;
+}
+  
+.large-block-label .bounding-input-radio .bounding-input-inner {
+    border-radius: 20px;
+}
+
+label.large-block-label.selected span.bounding-input-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/images/tick.png);
+  background-size: cover;
+}
+label.large-block-label.selected span.bounding-input-radio span.bounding-input-inner {
+  background: #0b0c0c;
+}
+
+.process-heading {
+  margin-top: 0;
+}
+
+.question-heading {
+  margin-top: 20px;
+}
+
+.hint-underneath {
+  margin-bottom: 0;
+}
+
+.stretch-textbox {
+  width: 100%;
+}
+
+.search-button-blue.button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  z-index: 4;
+  right: 0;
+  top: 25px;
+  width: 110px;
+  height: 36px;
+  padding-left: 42px;
+  border: none;
+  overflow: hidden;
+  color: #fff;
+  background-color: #2b8cc4;
+  background-image: url(https://assets.digital.cabinet-office.gov.uk/frontend/search/search-button-b231bf371989287a124d40d323caf470.png);
+  background-repeat: no-repeat;
+  background-position: -18px -3px;
+  background-size: 55%;
+}
+
+.search-button-blue.button:hover {
+  background-color: #267daf;
+}
+
+.skip-link {
+  padding-top: 10px;
+}
+
+.consultant-record {
+}
+
+.consultant-record .consultant-name {
+  font-weight: 600;
+}
+
+.consultant-record .consultant-occupation {
+  font-size: 80%;
+  padding-bottom: 10px;
+  font-style: italic;
+  color: #6f777b
+}
+
+.consultant-record .consultant-location {
+  font-size: 80%;
+}
+
+.ui-state-focus {
+  outline: 3px solid #FFBF47;
+}
+
+// End
+
+// General typography tweaks
+
+.heading-large {
+  margin-bottom: $gutter;
+}
+
+.form-hint {
+  margin-bottom: $gutter;
+}
+
+label {
+  margin-top: $gutter-half;
+}
+
+// Styles for date of birth form
+
+.field-wrapper {
+  display: inline-block;
+  width: 3em;
+  margin-right:.5em;
+}
+
+.year {
+  width: 5em;
+}
+
+.field-wrapper label {
+  margin-top: 0;
+}
+
+.field-wrapper .form-control {
+  width: 100%;
+}
+
+.postcode .form-control {
+  width: 10em;
+}
+
+.block-label .form-hint {
+  margin: 0;
+}

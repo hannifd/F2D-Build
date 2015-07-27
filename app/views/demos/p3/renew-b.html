@@ -1,0 +1,47 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<div class="form-group">
+
+		<h1 class="form-title heading-large">Do you need to renew your 1, 2 or 3 year licence?</h1>
+
+		<fieldset class="inline">
+			<label class="block-label" for="radio-inline-1">
+				<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">Yes
+			</label>
+			<label class="block-label" for="radio-inline-2">
+				<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">No
+			</label>
+		</fieldset>
+
+	</div>
+
+	<a class="button" href="/">Save and continue</a>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

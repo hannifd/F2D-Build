@@ -1,0 +1,71 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+	{{>includes/phase_banner}}
+
+	<div class="form-group">
+
+				<h1 class="form-title heading-large">
+					As a result of your medical condition, which special controls have been fitted to your motorbike?
+				</h1>
+
+				<span class="form-hint">Select all options that are relevant to you</span>
+
+				<fieldset>
+					<label class="block-label" for="checkbox-1">
+						<input id="checkbox-1" type="checkbox" name="checkbox-group" value="1">Adjusted commands
+					</label>
+					<label class="block-label" for="checkbox-2">
+						<input id="checkbox-2" type="checkbox" name="checkbox-group" value="2">Adjusted foot operated brake
+					</label>
+					<label class="block-label" for="checkbox-3">
+						<input id="checkbox-3" type="checkbox" name="checkbox-group" value="3">Adjusted hand operated brake
+					</label>
+					<label class="block-label" for="checkbox-4">
+						<input id="checkbox-4" type="checkbox" name="checkbox-group" value="4">Adjusted manual transmission and clutch
+					</label>
+					<label class="block-label" for="checkbox-5">
+						<input id="checkbox-5" type="checkbox" name="checkbox-group" value="5">Only with sidecar
+					</label>
+					<label class="block-label" for="checkbox-6">
+						<input id="checkbox-6" type="checkbox" name="checkbox-group" value="6">Single operated brake
+					</label>
+					<label class="block-label" for="checkbox-7">
+						<input id="checkbox-7" type="checkbox" name="checkbox-group" value="7">Seat height
+						<span class="form-hint">Allows driver in a seated position to have contact with the ground</span>
+					</label>
+				</fieldset>
+
+	</div>
+
+	<p>
+		<br/><br/><br/>
+	</p>
+
+	<a class="button" href="vehicle-moped">Save and continue</a>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

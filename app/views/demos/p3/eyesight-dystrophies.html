@@ -1,0 +1,57 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+    
+  <div class="form-group">
+
+      <h4 class="form-title heading-large">Do you have cataracts or any corneal dystrophies (eg Fuchs) in one or both of your eyes?</h4> 
+
+      <div class="form-group">
+        <label class="block-label" for="q3-a1" id="q3-a1-label">
+          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
+        </label>
+        <label class="block-label" for="q3-a2" id="q3-a2-label">
+          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
+        </label>
+      </div>
+    
+  </div>
+
+  <a class="button" href="care-seen-recently">Save and continue</a>
+
+  <ul>
+    <li><a href="javascript:history.go(-1);">Back</a></li>
+  </ul>
+
+<script>
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+

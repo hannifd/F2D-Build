@@ -1,0 +1,217 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+<script>
+
+var conditions = [];
+
+function next() { 
+  /*
+  var supported = ['diabetes','glaucoma'];
+
+  conditions.sort();
+
+  var tokens = [];
+  for(var s=0; s < supported.length; s++) {
+    for(var i=0; i < conditions.length; i++) {
+      if(conditions[i].toLowerCase() == supported[s]) {
+        tokens.push(supported[s]);
+      }
+    }
+  }
+
+  // Now we have our conditions, we next to progress onwarrds.
+  if(tokens.length > 0) {
+    window.location.href = 'review-conditions?flow='+tokens[0]+'&conditions='+tokens;
+  } else {
+    alert('The only conditions that are supported are: ['+supported+']');
+  }
+  */
+  window.location.href = 'review-conditions?flow=diabetes&conditions=diabetes';
+}
+  
+function checkLayout() {
+  if(conditions.length > 0) {
+    document.getElementById('none').style.display = 'none';
+    document.getElementById('term').style.display = 'none';
+    document.getElementById('some').style.display = 'block';
+    document.getElementById('continue').disabled = false;
+  } else {
+    document.getElementById('none').style.display = 'block';
+    document.getElementById('some').style.display = 'none';
+    document.getElementById('continue').disabled = true;
+  }
+}
+
+function addCondition(condition) {
+  conditions.push(condition);
+  try {
+    document.getElementById('Remove_'+condition).style.display = 'block';
+    document.getElementById('Add_'+condition).style.display = 'none';
+    document.getElementsByName(''+condition)[0].style.display ='none';
+  } catch(e) {
+    document.getElementById('Remove_unknown').style.display = 'block';
+  }
+  checkLayout();
+}
+
+function removeCondition(condition) {
+  for(var i=0; i < conditions.length; i++) {
+    if(conditions[i] == condition) {
+      conditions[i] = '\0';
+      break;
+    }
+  }
+  
+  conditions.sort().reverse().pop();
+  
+  try {
+    document.getElementById('Remove_'+condition).style.display = 'none';
+    document.getElementById('Add_'+condition).style.display = 'block';
+    document.getElementsByName(''+condition)[0].style.display ='block';
+  } catch(e) {
+    
+  }
+
+  checkLayout();
+}
+
+</script>
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <h2 class="heading-medium process-step">
+    Step 2 of 7
+  </h2>
+  <h1 class="heading-xlarge process-heading">
+    Your medical conditions
+  </h1> 
+
+  <form id="medical-form" action="medical-conditions" method="get" class="form">
+
+    <input type="hidden" id="flow" name="flow" value="{{flow}}"/>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <h2 class="heading-medium">Search for your condition</h2>
+
+          <div id="search-panel">
+            <input type="text" id="search" name="search" list="conditions-list" value="{{conditions}}" placeholder="eg. diabetes" class="form-control" style="background-image: url(''); padding-left: 5px; width: 53%; display: inline;"/>
+
+            <datalist id="conditions-list">
+            <option value="Diabetes" />
+            <option value="Diabetes (Type 1)"/>
+            <option value="Diabetes (Type 2)"/>
+            <option value="&raquo; DIAB1 (Online Form)"/>
+            <option value="Epilepsy" />
+            <option value="Glaucoma" />
+            <option value="Dementia" />
+            <option value="Pacemaker" />
+            <option value="Stroke" />
+            <option value="Sleep Apnoea" />
+            <option value="Hypertension" />
+            </datalist>
+
+            <button style="top: 0;" type="submit" class="search-button-blue button">
+              Search
+            </button>
+
+          </div>
+
+          <br/>
+
+          <div id="my-conditions">
+            <div id="none">
+              <span class="form-hint">You have not selected a medical condition.</span>
+            </div>
+            <div id="term" class="starthidden">
+              <span class="form-hint">You searched for: <span class="heading-small">{{search}}</span></span> 
+              <br/>
+              Did you mean ...<br/>
+              <ul class="list-bullet text">
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');">Diabetes</a></li>
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');">Diabetes (Type 1)</a></li>
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');">Diabetes (Type 2)</a></li>
+              </ul>
+            </div>
+
+            <div id="some" class="starthidden"><p>You have selected these condition(s):</p></div>
+
+            <a id="Remove_diabetes" class="starthidden" href="javascript:removeCondition('diabetes');">- Diabetes</a>
+            <a id="Remove_epilepsy" class="starthidden" href="javascript:removeCondition('epilepsy');">- Epilepsy</a>
+            <a id="Remove_glaucoma" class="starthidden" href="javascript:removeCondition('glaucoma');">- Glaucoma</a>
+            <a id="Remove_dementia" class="starthidden" href="javascript:removeCondition('dementia');">- Dementia</a>
+            <a id="Remove_pacemaker" class="starthidden" href="javascript:removeCondition('pacemaker');">- Pacemaker</a>
+            <a id="Remove_stroke" class="starthidden" href="javascript:removeCondition('stroke');">- Stroke</a>
+            <a id="Remove_sleepapnoea" class="starthidden" href="javascript:removeCondition('sleepapnoea');">- Sleep Apnoea</a>
+            <a id="Remove_hypertension" class="starthidden" href="javascript:removeCondition('hypertension');">- Hypertension</a>
+
+          </div>
+      </div>
+
+      <div class="column-half" style="border-left: 5px solid #c0c0c0;">
+        <div class="">
+          <h2 class="heading-medium">Or, add a common one:</h2>
+          <div class="column-half">
+            <p id="Add_diabetes" name="diabetes"><a href="javascript:addCondition('diabetes');">+ Diabetes</a></p>
+            <p id="Add_epilepsy"><a href="javascript:addCondition('epilepsy');">+ Epilepsy</a></p>
+            <p id="Add_glaucoma"><a href="javascript:addCondition('glaucoma');">+ Glaucoma</a></p>
+            <p id="Add_dementia"><a href="javascript:addCondition('dementia');">+ Dementia</a></p>
+          </div>
+          <div class="column-half">
+            <p id="Add_pacemaker"><a href="javascript:addCondition('pacemaker');">+ Pacemaker</a></p>
+            <p id="Add_stroke"><a href="javascript:addCondition('stroke');">+ Stroke</a></p>
+            <p id="Add_sleepapnoea"><a href="javascript:addCondition('sleepapnoea');">+ Sleep Apnoea</a></p>
+            <p id="Add_hypertension"><a href="javascript:addCondition('hypertension');">+ Hypertension</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <br/><br/>
+
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Save and continue" onclick="next()" disabled="true" /> 
+    </div>
+
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+
+  </form>
+
+<script>
+
+document.getElementById("search").focus();
+if("{{search}}".length > 0) {
+  document.getElementById('term').style.display = 'block';
+  document.getElementById('none').style.display = 'none';
+}
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

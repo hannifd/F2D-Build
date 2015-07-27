@@ -1,0 +1,79 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+    
+  <h4 class="heading-large">Have you had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months? </h4> 
+
+  <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
+
+  <fieldset class="inline" id="q3">
+    <label class="block-label" for="q3-a1" id="q3-a1-label">
+      <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
+    </label>
+    <label class="block-label" for="q3-a2" id="q3-a2-label">
+      <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
+    </label>
+  </fieldset>
+
+  <p>
+    <br/><br/><br/>
+  </p>
+
+  <div class="form-group">
+    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
+  </div>
+
+  <ul>
+    <li><a href="javascript:history.go(-1);">Back</a></li>
+  </ul>
+
+<script>
+
+  var data = {
+    state: "",
+    validate: "true",
+    questions: [
+      {id: "q3", type: "radio", active: "true", answers: [
+          {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Yes", message: "", redirect: "eyesight-standard?flow={{flow}}&conditions={{conditions}}"},
+      {id: "2", description: " No", message: "", redirect: "eyesight-standard?flow={{flow}}&conditions={{conditions}}"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
+
+ </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+
