@@ -1,0 +1,57 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <form action="medical-form" method="get" class="form inline">
+
+    <div class="grid-row" id="q1">
+      <div class="column-full">
+
+        <h4 class="heading-large">Please wait, we are redirecting you...</h4>
+
+      </div>
+    </div>
+
+  </form>
+
+<script>
+
+  var insulin = {{insulin}};
+  var hypos = {{hypos}};
+
+  var target = 'your-driver-number?insulin={{insulin}}&hypos={{hypos}}';
+  if((!insulin) && (!hypos)) {
+    target = 'no-further-ingo-required';
+  }
+
+  window.location.href = target;
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

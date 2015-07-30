@@ -112,16 +112,7 @@ function answer(element) {
 	}
 }
 
-function decision(element, flow, conditions) {
-	/*
-	if((flow == null || flow.length == 0) || (conditions == null || conditions.length == 0)) {
-		alert('ERROR: You have not used the decision tree properly!');
-		return;
-	} else {
-		alert('Current Flow: ['+flow+'], Conditions: ['+conditions+']');
-	}
-	*/
-	
+function decision(element) {
 	// If we don't have page validation turned on, we use the first decision.
 	if((page.validate == "false") && (page.state.length == 0)) {
 		page.state = 1;

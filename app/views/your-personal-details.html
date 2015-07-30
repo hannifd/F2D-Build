@@ -1,0 +1,79 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<div class="form-group">
+		<h1 class="heading-large">Your personal details</h1>
+		<span class="form-hint">Please enter your name and date of birth as it appears on your licence</span>
+
+		<label class="form-label" for="first-name">
+			First Name
+		</label>
+		<input class="form-control" id="first-name" type="text">
+
+		<label class="form-label" for="middle-names">
+			Middle Name(s)
+		</label>
+		<input class="form-control" id="middle-names" type="text">
+
+		<label class="form-label" for="last-name">
+			Last Name
+		</label>
+		<input class="form-control" id="last-name" type="text">
+
+		<h1 class="heading-medium">Date of birth</h1>
+			<div class="day field-wrapper">
+				<label class="form-label" for="dob-day">
+					Day
+				</label>
+				<input class="form-control" id="dob-day" type="text">
+			</div>
+
+			<div class="month field-wrapper">
+				<label class="form-label" for="dob-month">
+					Month
+				</label>
+				<input class="form-control" id="dob-month" type="text">
+			</div>
+
+			<div class="year field-wrapper">
+				<label class="form-label" for="dob-year">
+					Year
+				</label>
+				<input class="form-control" id="dob-year" type="text">
+			</div>
+
+			<span class="form-hint">Example: 31 03 1970</span>
+
+	</div>
+
+	<a class="button" href="your-address-details">Save and continue</a>
+
+</main>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
