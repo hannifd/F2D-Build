@@ -18,8 +18,8 @@
   <script>
     // Add condition to the title
     $(document).ready(function() {
-      $('#condition-heading').append(" for " + decodeURI(QueryString.c));
-      $('#condition-link').attr("href","https://www.gov.uk" + decodeURI(QueryString.u));
+      $('#condition-heading').append(" for " + decodeURIComponent(QueryString.c));
+      $('#condition-link').attr("href","https://www.gov.uk" + decodeURIComponent(QueryString.u));
     });
     
   </script>
@@ -35,7 +35,7 @@
 
         <h4 id="condition-heading" class="heading-xlarge">DVLA notification form</h4>
         
-        <p>This online service doesn't currently support your medical condition.</p>
+        <p>The DVLA online notification service doesn’t currently support this medical condition.</p>
         
         <p>Instead, download and complete the <a id="condition-link" href="https://www.gov.uk" rel="external">paper form</a> &ndash; then post it to the DVLA.</p>
         
@@ -44,12 +44,12 @@
         <details>
           <summary>
             <span class="summary">
-              Why can't I use the online service?
+              Why can’t I use the online service?
             </span>
           </summary>
           <div class="panel-indent">
-            <p>This service is currently in the alpha phase. This means that the service is relatively new, with lots of planned additions.</p>
-            <p>Please check back when you complete your next application to see if the condition is available online.</p>
+            <p>This service is currently in the alpha phase. This means that the service is relatively new, with limited functionality.</p>
+            <p>Please check back when you next complete your application to see if the condition is available online.</p>
           </div>
         </details>
   
