@@ -62,12 +62,6 @@
     (function($){
       $(function(){
         $('select').selectToAutocomplete();
-        $('form').submit(function(){
-          alert( $(this).serialize() );
-          return false;
-          
-        });
-        
       });
     })(jQuery);
   </script>
@@ -139,8 +133,10 @@
         <option value="deja-vu" data-alternative-spellings="deja" info-url="/deja-vu-and-driving">Déjà vu</option>
         <option value="dementia" data-alternative-spellings="" info-url="/dementia-and-driving">Dementia</option>
         <option value="depression" data-alternative-spellings="" info-url="/depression-and-driving">Depression</option>
-        <option value="diabetes" data-alternative-spellings="(type 1)
-(type 2)
+        <option start-url="diabetes-with-insulin" value="diabetes" data-alternative-spellings="(type
+(typr
+1)
+2)
 blood
 daiabetees
 daiabeties
@@ -310,27 +306,33 @@ treated" info-url="/diabetes-driving">Diabetes</option>
         <option value="wolff-parkinson-white-syndrome" data-alternative-spellings="" info-url="/wolff-parkinson-white-syndrome-and-driving">Wolff-Parkinson-White syndrome</option>
       </optgroup>
     </select>
+      
+      <p></p>
+      <button style="margin-top: .5em;" class="button" type="button" onclick="process();">Save and continue</button>
   </form>
-
-  <!-- <p>&nbsp;</p>
-  <p class="small"><a href="#">Add another condition</a></p> -->
 
 </div>
 
-	<a class="button" href="diabetes-with-insulin">Save and continue</a>
-
 <script type="text/javascript">
-function redirectMe (sel) {
-    var url = sel[sel.selectedIndex].value;
-    window.location = url;
-}
-</script>
-
-<script type="text/javascript">
+  
   $(document).ready(function(){
       $('.ui-autocomplete-input').focus();
   }) 
   
+  function process() {
+      var selectedCondition = $('#condition-selector').find(':selected');
+    
+      var condition = encodeURI(selectedCondition.text());
+    
+      if (selectedCondition.attr('start-url')) {
+        window.location = selectedCondition.attr('start-url');
+      } else {
+        var infoURL = encodeURI(selectedCondition.attr('info-url'));
+        window.location = "exit/unsupported-condition?c=" + condition + "&u=" + infoURL;
+      }
+      
+       
+  }
   
 </script>
 

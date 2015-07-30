@@ -1,0 +1,69 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+  <script>
+    // Add condition to the title
+    $(document).ready(function() {
+      $('#condition-heading').append(" for " + decodeURI(QueryString.c));
+      $('#condition-link').attr("href","https://www.gov.uk" + decodeURI(QueryString.u));
+    });
+    
+  </script>
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <form action="medical-form" method="get" class="form inline">
+
+    <div class="grid-row" id="q1">
+      <div class="column-two-thirds">
+
+        <h4 id="condition-heading" class="heading-xlarge">DVLA notification form</h4>
+        
+        <p>This online service doesn't currently support your medical condition.</p>
+        
+        <p>Instead, download and complete the <a id="condition-link" href="https://www.gov.uk" rel="external">paper form</a> &ndash; then post it to the DVLA.</p>
+        
+        <!--<p>You can still tell the DVLA about your medical condition using by completing and returning a paper form. Read <a href="https://www.gov.uk/condition-and-driving" rel="external">X and Driving</a> for more information.</p>-->
+        
+        <details>
+          <summary>
+            <span class="summary">
+              Why can't I use the online service?
+            </span>
+          </summary>
+          <div class="panel-indent">
+            <p>This service is currently in the alpha phase. This means that the service is relatively new, with lots of planned additions.</p>
+            <p>Please check back when you complete your next application to see if the condition is available online.</p>
+          </div>
+        </details>
+  
+
+      </div>
+    </div>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
