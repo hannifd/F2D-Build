@@ -40,7 +40,7 @@
 
   var target = 'your-driver-number?insulin={{insulin}}&hypos={{hypos}}';
   if((!insulin) && (!hypos)) {
-    target = 'no-further-ingo-required';
+    target = 'exit/non-notifiable-condition';
   }
 
   window.location.href = target;

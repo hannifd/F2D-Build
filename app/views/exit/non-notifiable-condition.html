@@ -1,0 +1,59 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <form action="medical-form" method="get" class="form inline">
+
+    <div class="grid-row" id="q1">
+      <div class="column-two-thirds">
+
+        <h4 class="heading-large">You do not need to tell the DVLA about your medical condition</h4>
+        
+        <p>Based on the information you have provided, you do not need to tell the DVLA about your medical condition. Read <a href="https://www.gov.uk/government/publications/information-for-drivers-with-diabetes" rel="external">leaflet INF188/2</a> for more information.</p>
+        
+        <p>If your condition or circumstances change, please return and check again if you need to tell the DVLA.</p>
+        
+        <details>
+          <summary>
+            <span class="summary">
+              I still want to tell the DVLA about my medical condition
+            </span>
+          </summary>
+          <div class="panel-indent">
+            <p>If you strongly believe that you should notify us, please <a href="/your-driver-number">continue with your application</a>.</p>
+          </div>
+        </details>
+  
+
+      </div>
+    </div>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
