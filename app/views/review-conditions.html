@@ -38,8 +38,7 @@
   var insulin = {{insulin}};
   var hypos = {{hypos}};
 
-  //var target = 'your-driver-number?insulin={{insulin}}&hypos={{hypos}}';
-  var target = 'legal-eyesight-standard';
+  var target = 'hypoglycaemia-symptoms?insulin={{insulin}}&hypos={{hypos}}';
   if((!insulin) && (!hypos)) {
     target = 'exit/non-notifiable-condition';
   }

@@ -23,7 +23,7 @@
   <div class="grid-row" id="q3">
 
     <div class="column-two-thirds">
-      <h4 class="heading-medium" id="question"></h4> 
+      <h4 class="heading-large" id="question">Do you need to wear glasses or corrective lenses to meet these standards?</h4> 
       <div class="form-group inline">
         <label class="block-label" for="q3-a1" id="q3-a1-label">
           <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="enable()">Yes
@@ -54,18 +54,6 @@
   </ul>
 
 <script>
-
-if ('{{q}}' == 1) {
-  $('#question').html("Do you need to wear glasses or corrective lenses to meet this standard?");
-} else if ('{{q}}' == 0) {
-  $('#question').html("Can you meet the standard when you wear glasses or corrective lenses?");
-} else {
-  $('#question').html("Do you need to wear glasses or corrective lenses to meet these standards?");
-}
-  
-  function enable(response) {
-    $("#continue").removeAttr("disabled");
-  }
 
 function next() {
   window.location.href = 'your-driver-number';
