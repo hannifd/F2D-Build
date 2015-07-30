@@ -18,18 +18,27 @@
 </header>
 
 <main id="page-container" role="main">
-  {{>includes/phase_banner}}
+	{{>includes/phase_banner}}
 
 	<div class="form-group">
 
 		<h1 class="heading-large">Your address details</h1>
 		<span class="form-hint">Please enter your full address and postcode as it appears on your licence</span>
 
+		<label class="form-label" for="postcode">
+			Postcode
+		</label>
+		<input class="form-control" id="postcode" type="text" maxlength="8" />
 	</div>
 
 	<a class="button" href="summary">Save and continue</a>
 
-</main>
+
+<script>
+
+document.getElementById('postcode').focus();
+
+</script>
 
 </main>
 
