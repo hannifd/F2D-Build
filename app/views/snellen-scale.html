@@ -25,21 +25,24 @@
     <div class="column-two-thirds">
       <h4 class="heading-large">Are you able to meet a level of 6/12 (decimal 0.5) on the Snellen scale?</h4> 
       
+      <div id="question" class="form-group">
       <span class="form-hint">
         If required, you may wear glasses or corrective lenses. 
       </span>
       
-      <img src="/public/images/icons/snellen-scale-diagram.png" width="283">
-      <div class="form-group inline">
+      <img src="/public/images/icons/snellen-scale-diagram.png" style="max-width: 283px;">
+      <span class="error-message" style="display: none;">Please select a valid option</span>
+      <div class="inline">
         <label class="block-label" for="q3-a1" id="q3-a1-label">
-          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="javascript:enable(3)">Yes
+          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="">Yes
         </label>
         <label class="block-label" for="q3-a2" id="q3-a2-label">
-          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="javascript:enable(3)">No
+          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="">No
         </label>
       </div>
+      </div>
       <div class="form-group">
-        <input id="continue" type="button" class="button" value="Continue" onclick="javascript:next()" disabled="true"/> 
+        <input id="continue" type="button" class="button" value="Continue" onclick="validate()" /> 
       </div>
 
       <ul>
@@ -65,7 +68,20 @@
 
 <script>
   
-  var standard = 3;
+  function validate() {
+      var value = $('input[name=q3-answer]:checked').val();
+
+      if (value == 'Y') {
+        go('glasses-for-standard');
+      } else if (value == 'N') {
+        go('glasses-for-standard');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      }
+    }
+  
+  /*var standard = 3;
   
   function enable(response) {
     $("#continue").removeAttr("disabled");
@@ -74,7 +90,7 @@
   
   function next(){
     window.location.href = 'glasses-for-standard?q='+standard;
-  }
+  }*/
 
 </script>
 

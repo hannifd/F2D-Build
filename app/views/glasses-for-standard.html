@@ -23,13 +23,14 @@
   <div class="grid-row" id="q3">
 
     <div class="column-two-thirds">
-      <h4 class="heading-large" id="question">Do you need to wear glasses or corrective lenses to meet these standards?</h4> 
-      <div class="form-group inline">
+      <h4 class="heading-large">Do you need to wear glasses or corrective lenses to meet these standards?</h4> 
+      <div class="form-group inline" id="question">
+        <span class="error-message" style="display: none;">Please select a valid option</span>
         <label class="block-label" for="q3-a1" id="q3-a1-label">
-          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="enable()">Yes
+          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="">Yes
         </label>
         <label class="block-label" for="q3-a2" id="q3-a2-label">
-          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="enable()">No
+          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="">No
         </label>
       </div>
     </div>
@@ -46,7 +47,7 @@
   </div>
 
   <div class="form-group">
-    <input id="continue" type="button" class="button" value="Continue" onclick="next();" /> 
+    <input id="continue" type="button" class="button" value="Continue" onclick="validate();" /> 
   </div>
 
   <ul>
@@ -54,10 +55,23 @@
   </ul>
 
 <script>
+  function validate() {
+      var value = $('input[name=q3-answer]:checked').val();
 
-function next() {
+      if (value == 'Y') {
+        go('your-driver-number');
+      } else if (value == 'N') {
+        go('your-driver-number');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      }
+    }
+  
+
+/*function next() {
   window.location.href = 'your-driver-number';
-}
+}*/
 </script>
 
  </main>

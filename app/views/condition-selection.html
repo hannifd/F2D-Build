@@ -57,6 +57,7 @@
     (function($){
       $(function(){
         $('select').selectToAutocomplete();
+        $('input').autcomplete ({sortResults:false})
       });
     })(jQuery);
   </script>
@@ -139,7 +140,7 @@
                 <option value="deja-vu" data-alternative-spellings="deja" info-url="/deja-vu-and-driving">Déjà vu</option>
                 <option value="dementia" data-alternative-spellings="" info-url="/dementia-and-driving">Dementia</option>
                 <option value="depression" data-alternative-spellings="" info-url="/depression-and-driving">Depression</option>
-                <option start-url="diabetes-with-insulin" value="diabetes" data-alternative-spellings="(type
+                <option start-url="diabetes-with-insulin" value="diabetes" relevancy-score-booster="10" data-alternative-spellings="(type
 (type1)
 (type2)
 (typr
@@ -317,7 +318,7 @@ treated" info-url="/diabetes-driving">Diabetes</option>
           </div>
 
           <p></p>
-          <button style="margin-top: .5em;" class="button" type="button" onclick="process();">Save and continue</button>
+          <button style="margin-top: .5em;" class="button" type="button" onclick="process();">Continue</button>
         </form>
 
         <details style="margin-top: 1em;">

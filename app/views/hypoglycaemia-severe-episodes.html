@@ -20,55 +20,69 @@
 
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
-    
-  <h4 class="heading-large">Have you had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months? </h4> 
 
-  <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
+  <h4 class="heading-large">Have you had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months? </h4>
 
-  <fieldset class="inline" id="q3">
-    <label class="block-label" for="q3-a1" id="q3-a1-label">
-      <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
-    </label>
-    <label class="block-label" for="q3-a2" id="q3-a2-label">
-      <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
-    </label>
-  </fieldset>
+  <div class="form-group" id="question">
+    <legend>
+      <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
+      <span class="error-message" style="display: none;">
+              Please select a valid option
+        </span>
+    </legend>
+    <fieldset class="inline" id="q3">
+      <label class="block-label" for="q3-a1" id="q3-a1-label">
+        <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="">Yes
+      </label>
+      <label class="block-label" for="q3-a2" id="q3-a2-label">
+        <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="">No
+      </label>
+    </fieldset>
+  </div>
 
-  <p>
-    <br/><br/><br/>
-  </p>
 
   <div class="form-group">
-    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
+    <input id="continue" type="button" class="button" value="Continue" onclick="validate();" />
   </div>
 
   <ul>
     <li><a href="javascript:history.go(-1);">Back</a></li>
   </ul>
 
-<script>
+  <script>
+    function validate() {
+      var value = $('input[name=q3-answer]:checked').val();
 
-  var data = {
-    state: "",
-    validate: "true",
-    questions: [
-      {id: "q3", type: "radio", active: "true", answers: [
-          {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
-        ]
+      if (value == 'Y') {
+        go('hypoglycaemia-warning-symptoms');
+      } else if (value == 'N') {
+        go('hypoglycaemia-warning-symptoms');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
       }
-    ],
-    decisions: [
-      {id: "1", description: "Yes", message: "", redirect: "legal-eyesight-standard"},
-      {id: "2", description: " No", message: "", redirect: "legal-eyesight-standard"}
-    ]
-  };
+    }
 
-  initialise(data);
+    /*var data = {
+      state: "",
+      validate: "true",
+      questions: [
+        {id: "q3", type: "radio", active: "true", answers: [
+            {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
+            {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
+          ]
+        }
+      ],
+      decisions: [
+        {id: "1", description: "Yes", message: "", redirect: "legal-eyesight-standard"},
+        {id: "2", description: " No", message: "", redirect: "legal-eyesight-standard"}
+      ]
+    };
 
-</script>
+    initialise(data);*/
+  </script>
 
- </main>
+</main>
 
 {{/content}}
 

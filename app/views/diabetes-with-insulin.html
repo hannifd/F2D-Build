@@ -21,26 +21,32 @@
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <form action="medical-form" method="get" class="form inline">
+  <form id="mmed-form" action="medical-form" method="get" class="form inline">
 
     <div class="grid-row" id="q1">
       <div class="column-full">
 
         <h4 class="heading-large">Do you treat your diabetes with insulin?</h4>
 
-        <div class="form-group">
+        <div class="form-group" id="question">
+          <legend>
+            <span class="error-message" style="display: none;">
+              Please select a valid option
+            </span>
+          </legend>
+          
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this)">Yes
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this)">No
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
           </label>
         </div>
       </div>
     </div>
   
     <div class="form-group">
-      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"> 
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="validate();"> 
     </div>
 
   </form>
@@ -50,8 +56,21 @@
   </a> 
 
 <script>
+  
+  function validate() {
+      var value = $('input[name=q1-answer]:checked').val();
+      
+      if (value == 'Y') {
+        go('hypoglycaemic-events?insulin=true');
+      } else if (value == 'N') {
+        go('hypoglycaemic-events?insulin=false');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
+  }
 
-  var data = {
+  /*var data = {
     state: "",
     validate: "true",
     questions: [
@@ -67,7 +86,7 @@
     ]
   };
 
-  initialise(data);
+  initialise(data);*/
 
 </script>
 
