@@ -1,0 +1,126 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <h1 class="form-title heading-large">
+    Your vehicle
+  </h1>
+         
+  <form action="D497check" method="get" class="form inline">     
+
+    <details>
+      <summary><span class="summary">Why we need to ask these questions</span></summary>
+      <div class="panel-indent">
+        <p>When you declare that you need to drive a vehicle fitted with special controls or automatic transmission; this will be updated onto your record and appear on the back of your licence.</p>
+        <img src="/public/images/icons/driving-licence-back.png" alt="The back of the licence" height="160" width="236"/>
+        <p>These codes tell you what conditions you must meet to drive.</p>
+      </div>
+    </details>
+
+    <br/>
+
+    <div class="grid-row starthidden" id="q15">
+
+      <div class="column-two-thirds">
+        <label class="form-label"> <h4 class="heading-medium question-heading">Do you need to drive a vehicle with automatic gears as a result of your medical condition?</h4></label>
+        <div class="form-group">
+          <label class="block-label" for="q15-a1" id="q15-a1-label">
+            <input id="q15-a1" type="radio" name="q15-answer" value="Y" onclick="answer(this)">
+            Yes
+          </label>
+          <label class="block-label" for="q15-a2" id="q15-a2-label">
+            <input id="q15-a2" type="radio" name="q15-answer" value="N" onclick="answer(this)">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="column-third">
+        <img class="icon-automatic-gears" src="/public/images/icons/icon-automatic-gears.png" height="150" width="150" />
+      </div>
+
+    </div>
+
+    <div class="grid-row starthidden" id="q16">
+
+      <div class="column-two-thirds">
+        <label class="form-label"><h2 class="heading-medium question-heading">Do you need to drive a vehicle with special controls?</h2></label>
+        <span class="form-hint">For example 'Combined braking with accelerator system'</span>
+        <div class="form-group">
+          <label class="block-label" for="q16-a1" id="q16-a1-label">
+            <input id="q16-a1" type="radio" name="q16-answer" value="Y" onclick="answer(this)">
+            Yes
+          </label>
+          <label class="block-label" for="q16-a2" id="q16-a2-label">
+            <input id="q16-a2" type="radio" name="q16-answer" value="N" onclick="answer(this)">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="column-third">
+        <p></p>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
+    </div>
+
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+
+  </form>
+
+<script>
+
+  var data = {
+    state: "",
+    validate: "true",
+    questions: [
+      {id: "q15", type: "radio", active: "true", answers: [
+          {id: "q15-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q15-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      },
+      {id: "q16", type: "radio", active: "true", answers: [
+          {id: "q16-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q16-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q16: Yes", message: "", redirect: "special-controls?flow={{flow}}&conditions={{conditions}}"},
+      {id: "2", description: "Q16: No", message: "", redirect: "summary?flow={{flow}}&conditions={{conditions}}"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
+
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,67 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<div class="form-group">
+
+		<h1 class="heading-large">Consultant's contact details</h1>
+
+		<span class="form-hint">You can search on the hospital/clinic name, the post code or both</span>
+
+		<div class="form-group" id="q8">
+      <label class="form-label" for="postcode" id="q8-a1-label">
+        Consultant's Phone Number
+        <span class="form-hint">
+          For example, '01792 123456'
+        </span>
+        <input id="q8-a1" name="q8-a1" type="text" maxlength="11" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br/>
+      </label>
+    </div>
+
+    <div class="form-group" id="q9">
+      <label class="form-label" for="Consultantname">
+        Consultant's Email Address
+        <span class="form-hint">
+          For example, 'doc@hospital.com'
+        </span>
+        <input id="q9-a1" name="q9-a1" type="text" class="form-control" onkeyup="answer(this)">
+        <br/>
+      </label>
+    </div>
+	</div>
+
+	<a class="button" href="summary">Save and continue</a>
+
+<script>
+
+document.getElementById('q8-a1').focus();
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
