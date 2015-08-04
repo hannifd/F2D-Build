@@ -59,9 +59,7 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        go('your-driver-number');
-      } else if (value == 'N') {
-        go('your-driver-number');
+        go('consultant-consent');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
