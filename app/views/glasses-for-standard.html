@@ -60,6 +60,8 @@
 
       if (value == 'Y') {
         go('consultant-consent');
+      } else if (value == 'N') {
+        go('consultant-consent');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

@@ -16,7 +16,8 @@
 <script>
 
 function start() {
-  window.location.href = 'condition-selection';
+  //window.location.href = 'condition-selection';
+  window.location.href = 'diabetes-with-insulin';
 }
 
 </script>
@@ -28,39 +29,46 @@ function start() {
 
     <div class="column-two-thirds">
       <h1 style="margin-top:0.5em;" class="form-title heading-xlarge">
-        Tell the DVLA about your medical condition
+        Tell DVLA about your medical condition
       </h1>
 
       <p>Use this service to:</p>
 
       <ul class="list-bullet">
-        <li>tell the DVLA about a health condition for the first time</li>
-        <li>tell the DVLA if your condition has changed</li>
-        <li>renew your short-term licence</li>
+        <li>tell DVLA about your diabetes</li>
       </ul>
+
+      <p>If you need to tell DVLA about a different condition, download and complete the paper form – then post it to the DVLA.</p>
 
       <div style="padding-top: 0px; padding-bottom: 5px;" class="panel-indent">
         <div class="help-notice">
           <h2 class="heading-medium">Don’t worry</h2>
         </div>
-        <p>90% of drivers are allowed to retain their current licence or are issued a short period licence subject to medical review on renewal.</p>
+        <p>90% of drivers are allowed to retain their current licence subject to medical review on renewal.</p>
       </div>
+
+      <details style="margin-top: 1em;">
+          <summary>
+            <span class="summary">
+              What you'll need to complete this service
+            </span>
+          </summary>
+          <div class="panel-indent">
+            <img src="http://fit2drive.herokuapp.com/public/images/icons/icon-driving-licence.png" height="50" width="50">
+            <img src="http://fit2drive.herokuapp.com/public/images/icons/icon-gp.png" height="50" width="50">
+            <ul class="list-bullet">
+              <li>your car or motorcycle driver’s licence</li>
+              <li>your healthcare professional (e.g. GP, Nurse, Consultant) details</li>
+              <li>your medication details</li>
+            </ul>
+          </div>
+      </details>
+
+      <br/>
 
       <a href="javascript:start();" class="button button-get-started" role="button">Start now</a>
-
-      <div class="need">
-        <h2 class="heading-medium">What you’ll need</h2>
-        <img src="http://fit2drive.herokuapp.com/public/images/icons/icon-driving-licence.png" height="50" width="50">
-        <img src="http://fit2drive.herokuapp.com/public/images/icons/icon-gp.png" height="50" width="50">
-        <ul class="list-bullet">
-          <li>your Car or Motorcycle Photocard Driver’s Licence</li>
-          <li>your Health Provider Details</li>
-          <li>your medication details</li>
-        </ul>
-      </div>
-
       
-      <h2 class="heading-medium" style="margin-top:0.75em">Other ways to apply</h2>
+      <h2 class="heading-medium" style="margin-top:0.75em">Other ways to tell DVLA</h2>
 
       <h2 class="heading-small" style="margin-top:0.75em">By post</h2> Please provide the following:
       <ul class="list-bullet">
