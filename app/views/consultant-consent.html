@@ -26,19 +26,19 @@
 
     <legend>
         <span class="error-message" style="display: none;">
-              You must agree to the medical consent to continue.
+              You must agree to the medical consent to continue
         </span>
     </legend>
 
-    <div id="outer-group" name="outer-group" class="form-group">
+    <div id="outer-group" style="margin-bottom: 0;" name="outer-group" class="form-group">
       <label id="outer-label" name="outer-label" class="large-block-label" for="declaration">
         <input id="declaration" name="declaration" type="checkbox" style="display: none;" value="Y" onchange="handle(this);"/>
         <span id="outer-span" name="outer-span" class="bounding-input">
           <span id="inner-span" name="inner-span" class="bounding-input-inner"></span>
         </span> 
-        <h2 class="heading-medium">Consent to the release of medical information</h2>
+        <h2 class="heading-medium" style="margin-top: 0;">Consent to the release of medical information</h2>
         <p>IMPORTANT: Please read the following information carefully and tick the box to show you understand.</p>
-        <ul class="list-bullet">
+        <ul class="list-bullet" style="margin-bottom: 0">
           <li>I agree that medical reports relevant to my fitness to drive may be disclosed to DVLA. These reports may be obtained from doctors, orthoptists, paramedical staff or officers of the Secretary of State.</li>
           <br/>
           <li>I agree that DVLA can disclose relevant medical information to registered medical practitioners including members of the Department for Transports Medical Advisory Panels if necessary and officers of the Secretary of State if I need a medical examination or practical assessment.</li>
@@ -49,7 +49,7 @@
   </div>
 
   <div class="form-group">
-    <input id="continue" type="button" class="button" value="Save and continue" onclick="validate();" />
+    <input id="continue" type="button" class="button" value="Continue" onclick="validate();" />
   </div>
 
 <script>
