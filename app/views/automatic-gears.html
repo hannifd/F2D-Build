@@ -17,7 +17,7 @@
   {{>includes/phase_banner}}
 
   <h1 class="form-title heading-large">
-    Your vehicle
+    Do you need to drive a vehicle with automatic gears as a result of your medical condition?
   </h1>
          
   <form action="D497check" method="get" class="form inline">     
@@ -36,7 +36,6 @@
     <div class="grid-row" id="q15">
 
       <div class="column-two-thirds">
-        <label class="form-label"> <h4 class="heading-medium question-heading">Do you need to drive a vehicle with automatic gears as a result of your medical condition?</h4></label>
         <div class="form-group">
           <label class="block-label" for="q15-a1" id="q15-a1-label">
             <input id="q15-a1" type="radio" name="q15-answer" value="Y" onclick="validate(this)">
@@ -56,7 +55,7 @@
     </div>
 
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
+      <input id="continue" type="button" class="button" value="Save and continue" onclick="next(this)"/> 
     </div>
 
     <ul>
@@ -68,7 +67,10 @@
 <script>
 
   function validate(element) {
-    window.location.href = 'summary';
+  }
+
+  function next(element) {
+    window.location.href = 'special-controls';
   }
 
 </script>
