@@ -16,8 +16,8 @@
 <script>
 
 function start() {
-  //window.location.href = 'condition-selection';
-  window.location.href = 'diabetes-with-insulin';
+  window.location.href = 'condition-selection';
+  //window.location.href = 'diabetes-with-insulin';
 }
 
 </script>
@@ -25,7 +25,8 @@ function start() {
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <div class="grid-row" style=";margin-top:1.5em">
+  <div id="notify" class="starthidden">
+    <div class="grid-row" style="margin-top:1.5em">
 
     <div class="column-two-thirds">
       <h1 style="margin-top:0.5em;" class="form-title heading-xlarge">
@@ -44,7 +45,7 @@ function start() {
         <div class="help-notice">
           <h2 class="heading-medium">Don’t worry</h2>
         </div>
-        <p>90% of drivers are allowed to retain their current licence subject to medical review on renewal.</p>
+        <p>90% of drivers are allowed to retain their current licence.</p>
       </div>
 
       <details style="margin-top: 1em;">
@@ -97,8 +98,18 @@ function start() {
       </nav>
     </div>
 
+    </div>
   </div>
+
+  <div id="renewal" class="starthidden">
+    Renewal wording to go here ... 
+  </div>
+
   <!-- close gridrow -->
+
+<script>
+show(QueryString.service);
+</script>
 
 </main>
 

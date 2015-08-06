@@ -37,11 +37,11 @@
       <div class="column-two-thirds">
         <div class="form-group">
           <label class="block-label" for="q16-a1" id="q16-a1-label">
-            <input id="q16-a1" type="radio" name="q16-answer" value="Y" onclick="validate(this)">
+            <input id="q16-a1" type="radio" name="q16-answer" value="Y">
             Yes
           </label>
           <label class="block-label" for="q16-a2" id="q16-a2-label">
-            <input id="q16-a2" type="radio" name="q16-answer" value="N" onclick="validate(this)">
+            <input id="q16-a2" type="radio" name="q16-answer" value="N">
             No
           </label>
         </div>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Save and continue" onclick="next(this)"/> 
+      <input id="continue" type="button" class="button" value="Save and continue" onclick="validate(this)"/> 
     </div>
 
     <ul>
@@ -66,10 +66,16 @@
 <script>
 
   function validate(element) {
-  }
-
-  function next() {
-    window.location.href = 'consultant-consent';
+      var value = $('input[name=q16-answer]:checked').val();
+      
+      if (value == 'Y') {
+        go('car-bike-moped');
+      } else if (value == 'N') {
+        go('consultant-consent');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
   }
 
 </script>
