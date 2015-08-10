@@ -57,7 +57,7 @@
     (function($){
       $(function(){
         $('select').selectToAutocomplete();
-        $('input').autcomplete ({sortResults:false})
+        $('input').autocomplete ({sortResults:false})
       });
     })(jQuery);
   </script>
@@ -213,9 +213,10 @@ treated" info-url="/diabetes-driving">Diabetes</option>
                 <option value="benign-essential-tremor" data-alternative-spellings="" info-url="/benign-essential-tremor-and-driving">Essential tremor</option>
 
                 <option value="dizziness" data-alternative-spellings="dizziness" info-url="/dizziness-and-driving">Giddiness (recurring)</option>
-                <option start-url="glaucoma-start-page" value="glaucoma" relevancy-score-booster="10" data-alternative-spellings="soreeyes marajuana glucoma glacoma glycoma" info-url="/glaucoma-and-driving">Glaucoma</option>
                 <option value="grand-mal-fits" data-alternative-spellings="" info-url="/grand-mal-fits-and-driving">Grand mal fits</option>
                 <option value="guillain-barre-syndrome" data-alternative-spellings="" info-url="/guillain-barre-syndrome-and-driving">Guillain-Barré syndrome</option>
+
+                <option start-url="glaucoma-start-page" value="glaucoma" data-alternative-spellings="glaucoma soreeyes marajuana glucoma glacoma glycoma" info-url="/glaucoma-and-driving">Glaucoma</option>
 
                 <option value="head-injury" data-alternative-spellings="Fractured skull" info-url="/head-injury-and-driving">Head injury</option>
                 <option value="heart-attacks" data-alternative-spellings="Myocardial infarction" info-url="/heart-attacks-and-driving">Heart attack</option>
@@ -338,9 +339,6 @@ treated" info-url="/diabetes-driving">Diabetes</option>
   </div>
 
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('.ui-autocomplete-input').focus();
-    })
 
     function process() {
       var selectedCondition = $('#condition-selector').find(':selected');
@@ -351,18 +349,21 @@ treated" info-url="/diabetes-driving">Diabetes</option>
         $('#condition-question').addClass('error');
         $('.error-message').show();
       } else {
-      
         if (selectedCondition.attr('start-url')) {
-          window.location = selectedCondition.attr('start-url');
+          window.location.href = selectedCondition.attr('start-url');
         } else {
           var infoURL = encodeURIComponent(selectedCondition.attr('info-url'));
-          window.location = "exit/unsupported-condition?c=" + condition + "&u=" + infoURL;
+          window.location.href = "exit/unsupported-condition?c=" + condition + "&u=" + infoURL;
         }
       }
-
       return false;
-      
     }
+
+    $(document).ready(function() {
+      $('.ui-autocomplete-input').focus();
+    });
+
+
   </script>
 
 </main>
