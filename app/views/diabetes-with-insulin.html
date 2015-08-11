@@ -61,9 +61,11 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        go('hypoglycaemic-events?insulin=true');
+        //go('hypoglycaemic-events?insulin=true');
+        go('review-conditions?insulin=true&hypos=false');
       } else if (value == 'N') {
-        go('hypoglycaemic-events?insulin=false');
+        //go('hypoglycaemic-events?insulin=false');
+        go('review-conditions?insulin=false&hypos=false');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
