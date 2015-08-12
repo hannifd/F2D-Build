@@ -1,0 +1,51 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <form action="medical-form" method="get" class="form inline">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h4 class="heading-large">You need to provide your driving licence number</h4>
+        
+        <p>You can only use this service if you provide a driving licence number. Without this number, we cannot attach your application to your driver record.</p> 
+
+        <p>If you do not have access to a photo or paper licence, you can <a href="https://www.gov.uk/view-driving-licence">view your driving licence information</a> online.</p>
+
+        <p>Please come back when you have your driving licence number.</p>
+
+        <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();">Return to GOV.UK website</button>
+
+      </div>
+    </div>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
