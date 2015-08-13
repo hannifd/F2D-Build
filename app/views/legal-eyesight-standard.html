@@ -67,13 +67,17 @@
   </div>
 
   <script>
-    alert(sessionStorage.condition);
-    
+    //alert(sessionStorage.condition);
+
     function validate() {
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        go('snellen-scale');
+        if(sessionStorage.condition == 'glaucoma') {
+          go('vision-condition');
+        } else {
+          go('snellen-scale');
+        }
       } else if (value == 'N') {
         go('snellen-scale');
       } else {
@@ -82,16 +86,6 @@
       }
     }
 
-    /*var standard = 1;
-  
-    function enable(response) {
-      $("#continue").removeAttr("disabled");
-      standard = response;
-    }
-  
-    function next(){
-      window.location.href = 'snellen-scale?q='+standard;
-    }*/
   </script>
 
 </main>
