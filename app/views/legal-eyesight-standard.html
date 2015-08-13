@@ -73,11 +73,7 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        if(sessionStorage.condition == 'glaucoma') {
-          go('vision-condition');
-        } else {
-          go('snellen-scale');
-        }
+        go('snellen-scale');
       } else if (value == 'N') {
         go('snellen-scale');
       } else {
