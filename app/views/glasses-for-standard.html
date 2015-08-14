@@ -59,17 +59,9 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        if(sessionStorage.condition == 'glaucoma') {
-          go('vision-condition');
-        } else {
-          go('automatic-gears');
-        }
+        go('laser-treatment');
       } else if (value == 'N') {
-        if(sessionStorage.condition == 'glaucoma') {
-          go('vision-condition');
-        } else {
-          go('automatic-gears');
-        }
+        go('laser-treatment');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

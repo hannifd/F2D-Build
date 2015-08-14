@@ -61,9 +61,9 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        go('legal-eyesight-standard');
+        go('your-personal-details');
       } else if (value == 'N') {
-        go('consultant-details');
+        go('consultant-consent');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
