@@ -1,4 +1,3 @@
-
 {{<govuk_template}}
 
 {{$head}}
@@ -64,13 +63,15 @@
         if(sessionStorage.condition == 'glaucoma') {
           go('vision-condition');
         } else {
-          go('healthcare-professional');
+          //go('healthcare-professional');
+          go('automatic-gears');
         }
       } else if (value == 'N') {
         if(sessionStorage.condition == 'glaucoma') {
           go('vision-condition');
         } else {
-          go('healthcare-professional');
+          //go('healthcare-professional');
+          go('automatic-gears');
         }
       } else {
         $('#question').addClass('error');

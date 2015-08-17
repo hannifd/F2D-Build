@@ -13,13 +13,16 @@
 
 {{$content}}
 
+<header class="page-header">
+
+</header>
+
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <h2 class="heading-medium process-step">
-    Step 6 of 7
-  </h2>
-  <h1 class="heading-xlarge process-heading">
+  <form>
+
+  <h1 class="heading-large form-title">
     Your vehicle
   </h1>
          
@@ -40,7 +43,7 @@
 
       <div class="column-two-thirds">
         <label class="form-label"> <h4 class="heading-medium question-heading">Do you need to drive a vehicle with automatic gears as a result of your medical condition?</h4></label>
-        <div class="form-group">
+        <div class="inline">
           <label class="block-label" for="q15-a1" id="q15-a1-label">
             <input id="q15-a1" type="radio" name="q15-answer" value="Y" onclick="answer(this)">
             Yes
@@ -63,7 +66,7 @@
       <div class="column-two-thirds">
         <label class="form-label"><h2 class="heading-medium question-heading">Do you need to drive a vehicle with special controls?</h2></label>
         <span class="form-hint">For example 'Combined braking with accelerator system'</span>
-        <div class="form-group">
+        <div class="inline">
           <label class="block-label" for="q16-a1" id="q16-a1-label">
             <input id="q16-a1" type="radio" name="q16-answer" value="Y" onclick="answer(this)">
             Yes
