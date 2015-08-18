@@ -59,8 +59,8 @@
   function validate() {
       var value = $('input[name=q1-answer]:checked').val();
       
-      alert('Condition = ['+sessionStorage.condition+']');
-      
+      //alert('Condition = ['+sessionStorage.condition+']');
+
       if (value == 'Y') {
         if(sessionStorage.condition == 'glaucoma') {
           go('vision-condition');
