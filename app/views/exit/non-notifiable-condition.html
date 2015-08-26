@@ -16,6 +16,14 @@
 
 <header class="page-header">
 
+<script>
+
+  function next() {
+    window.location.href = 'https://www.gov.uk/browse/driving';
+  }
+
+</script>
+
 </header>
 
 <main id="page-container" role="main">
@@ -30,24 +38,15 @@
         
         <p>Based on the information you have provided, you do not need to tell the DVLA about your medical condition and you can continue driving.</p> 
 
-        <p>Read <a href="https://www.gov.uk/government/publications/information-for-drivers-with-diabetes" rel="external">leaflet INF188/2</a> for more information.</p>
+        <p>Read <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/455115/INF188X2_080413.pdf" rel="external" target="_new">leaflet INF188/2</a> for more information.</p>
         
         <p>If your condition or circumstances change, please return and check again if you need to tell the DVLA.</p>
         
-        <details>
-          <summary>
-            <span class="summary">
-              I still want to tell the DVLA about my medical condition
-            </span>
-          </summary>
-          <div class="panel-indent">
-            <p>If you strongly believe that you should notify us, please <a href="/hypoglycaemia-symptoms?insulin=false&hypos=false">continue with your application</a>.</p>
-          </div>
-        </details>
-  
-
       </div>
     </div>
+
+  <br/>
+  <button type="button" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();">Return to GOV.UK website</button>
 
   </form>
 

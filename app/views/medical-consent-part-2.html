@@ -1,0 +1,145 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+    
+  <h1 class="heading-large form-title">
+    It may be useful if we could reveal certain aspects of this enquiry to your doctors.
+  </h1>
+  
+  <form action="medical-form" method="get" class="form">
+    
+    <div class="grid-row" id="q1">
+      <div class="column-full">
+
+        <div class="inline form-group" id="question-1">
+
+          <div>I agree that DVLA may inform my doctors of the outcome of this medical enquiry.</div>
+
+          <legend id="q1-error" >
+            <span class="error-message">
+              Please select a valid option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="">Yes
+          </label>
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row" id="q2">
+      <div class="column-full">
+
+        <div class="inline form-group" id="question-2">
+
+          <div>I agree to the release of medical information by DVLA, discovered during this medical enquiry, to my doctors.</div>
+
+          <legend id="q2-error">
+            <span class="error-message">
+              Please select a valid option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q2-a1" id="q2-a1-label">
+            <input id="q2-a1" type="radio" name="q2-answer" value="Y" onclick="">Yes
+          </label>
+          <label class="block-label" for="q2-a2" id="q2-a2-label">
+            <input id="q2-a2" type="radio" name="q2-answer" value="N" onclick="">No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="validate();" /> 
+    </div>
+    
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+    
+  </form>
+
+<script>
+
+  $('#q1-error').hide();
+  $('#q2-error').hide();
+
+  function next() {
+    window.location.href = 'medical-consent-part-2';
+  }
+
+  function validate() {
+      var Q1Valid = false;
+      var Q2Valid = false;
+
+      // Remove previous errors
+      $('#question-1').removeClass('error');
+      $('#question-2').removeClass('error');
+      $('#q1-error').hide();
+      $('#q2-error').hide();
+
+      // Do question 1
+      var value1 = $('input[name=q1-answer]:checked').val();
+      
+      if (value1 == 'Y') {
+        Q1Valid = true;
+      } else if (value1 == 'N') {
+        Q1Valid = true;
+      } else {
+        $('#question-1').addClass('error');
+        $('#q1-error').show();
+      } 
+
+      // Do question 1
+      var value2 = $('input[name=q2-answer]:checked').val();
+      
+      if (value2 == 'Y') {
+        Q2Valid = true;
+      } else if (value2 == 'N') {
+        Q2Valid = true;
+      } else {
+        $('#question-2').addClass('error');
+        $('#q2-error').show();
+      } 
+
+      if(Q1Valid && Q2Valid) {
+        if(value1 == 'Y' && value2 == 'Y') {
+
+        }
+      }
+  }
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

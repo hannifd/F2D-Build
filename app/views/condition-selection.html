@@ -69,17 +69,18 @@
   {{>includes/phase_banner}}
 
   <div class="grid-row" id="q1">
-    <div class="column-two-thirds">
+    <div class="column-full">
       <div class="form-group">
         <h1 class="heading-large">What condition are you telling us about?</h1>
 
         <form onsubmit="return process();">
           <div id="condition-question">
-            <legend><span class="form-hint">Please choose the condition you wish to report</span>
-            <span class="error-message" style="display: none;">Please enter a valid condition</span></legend>
+            <legend>
+              <span class="error-message" style="display: none;">Please enter a valid condition</span>
+            </legend>
 
 
-            <select name="Condition" placeholder="Enter your condition" id="condition-selector" autofocus autocorrect="off" autocomplete="off" copy-attributes-to-text-field="false" style="min-width: 320px;">
+            <select name="Condition" placeholder="" id="condition-selector" autofocus autocorrect="off" autocomplete="off" copy-attributes-to-text-field="false" style="min-width: 320px;">
               <optgroup style="font-size:18px;">
                 <option value="" selected="selected">Your condition</option>
                 <option value="acoustic-neuroma" data-alternative-spellings="" info-url="/acoustic-neuroma-and-driving">Acoustic neuroma</option>
