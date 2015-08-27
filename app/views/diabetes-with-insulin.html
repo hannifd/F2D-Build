@@ -57,11 +57,11 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        //go('hypoglycaemic-events?insulin=true');
-        go('review-conditions?insulin=true&hypos=false');
+        sessionStorage.insulin = true;
+        go('verify/verify-1');
       } else if (value == 'N') {
-        //go('hypoglycaemic-events?insulin=false');
-        go('review-conditions?insulin=false&hypos=false');
+        sessionStorage.insulin = false;
+        go('exit/non-notifable-condition');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

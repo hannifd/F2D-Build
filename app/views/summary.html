@@ -190,7 +190,7 @@ function handle(element) {
         <div class="light-small summary-title" >Medical condition</div >
       </div>
       <div class="column-half">
-        <div  class="bold-small summary-text">Diabetes</div >
+        <div id="condition" class="bold-small summary-text" style="text-transform: uppercase;">...</div >
       </div>
       <div class="column-quarter" style="text-align: right;"> 
         <div class="light-small summary-title"><a href="condition-selection">Change?</a></div >
@@ -313,6 +313,11 @@ function handle(element) {
     <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();" disabled="true">Submit</button>
     
   </div>
+
+<script>
+
+if(sessionStorage.condition) document.getElementById('condition').innerHTML = sessionStorage.condition;
+</script>
 
 </main>
 
