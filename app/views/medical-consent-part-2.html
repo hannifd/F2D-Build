@@ -77,10 +77,6 @@
       <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="validate();" /> 
     </div>
     
-    <ul>
-      <li><a href="javascript:history.go(-1);">Back</a></li>
-    </ul>
-    
   </form>
 
 <script>
@@ -89,7 +85,7 @@
   $('#q2-error').hide();
 
   function next() {
-    window.location.href = 'medical-consent-part-2';
+    window.location.href = 'consultant-details';
   }
 
   function validate() {
@@ -127,9 +123,7 @@
       } 
 
       if(Q1Valid && Q2Valid) {
-        if(value1 == 'Y' && value2 == 'Y') {
-
-        }
+        next();
       }
   }
 

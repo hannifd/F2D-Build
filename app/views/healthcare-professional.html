@@ -57,10 +57,10 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        //go('your-personal-details');
         go('your-driver-number');
       } else if (value == 'N') {
-        go('consultant-consent');
+        //go('consultant-consent');
+        go('medical-consent-part-1');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
