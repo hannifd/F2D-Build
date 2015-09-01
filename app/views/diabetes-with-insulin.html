@@ -58,10 +58,10 @@
       
       if (value == 'Y') {
         sessionStorage.insulin = true;
-        go('verify/verify-1');
+        go('verify/verify-2');
       } else if (value == 'N') {
         sessionStorage.insulin = false;
-        go('exit/non-notifable-condition');
+        go('exit/non-notifiable-condition');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
