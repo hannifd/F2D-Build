@@ -27,9 +27,9 @@
 
       <div id="question" class="form-group">
 
-        <img src="/public/images/icons/read-number-plate-diagram.png" width="283">
         <span class="error-message" style="display: none;">Please select a valid option</span>
-        <div class="inline">
+
+        <div class="block">
           <label class="block-label" for="q3-a1" id="q3-a1-label">
             <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="">Yes
           </label>
@@ -41,6 +41,7 @@
           </label>
         </div>
       </div>
+
       <div class="form-group">
         <input id="continue" type="button" class="button" value="Continue" onclick="validate();" />
       </div>
@@ -53,7 +54,9 @@
         <h3 class="heading-small" style="border-top:10px solid #005ea5;margin-top:0;padding-top:1em">The legal eyesight standard</h3>
 
         <ul class="list-bullet">
-          <li>you must be able to read a car number plate from 20 metres (66 feet)</li>
+          <li>you must be able to read a car number plate from 20 metres
+                  <img src="/public/images/icons/read-number-plate-diagram.png" style="width: 100%;">
+          </li>
           <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale</li>
         </ul>
         <p>If you are in any doubt, you should discuss with your optician or doctor.</p>
@@ -70,9 +73,11 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        go('snellen-scale');
+        //go('snellen-scale');
+        go('laser-treatment');
       } else if (value == 'N') {
-        go('snellen-scale');
+        //go('snellen-scale');
+        go('laser-treatment');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
