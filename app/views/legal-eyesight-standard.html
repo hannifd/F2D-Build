@@ -55,9 +55,11 @@
 
         <ul class="list-bullet">
           <li>you must be able to read a car number plate from 20 metres
-                  <img src="/public/images/icons/read-number-plate-diagram.png" style="width: 100%;">
+            <img src="/public/images/icons/read-number-plate-diagram.png" style="max-width: 100%;">
           </li>
-          <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale</li>
+          <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale
+            <img src="/public/images/icons/snellen-scale-diagram.png" style="max-width: 100%;">
+          </li>
         </ul>
         <p>If you are in any doubt, you should discuss with your optician or doctor.</p>
       </nav>
@@ -73,10 +75,10 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        //go('snellen-scale');
+        go('laser-treatment');
+      } else if (value == 'G') {
         go('laser-treatment');
       } else if (value == 'N') {
-        //go('snellen-scale');
         go('laser-treatment');
       } else {
         $('#question').addClass('error');
