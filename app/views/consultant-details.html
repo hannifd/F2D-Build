@@ -22,23 +22,21 @@
 
 	<div class="form-group">
 
-		<h1 class="heading-large">Your consultant's details</h1>
+		<h1 class="heading-large">Your <div id="healthcare-professional" style="display: inline;">...</div>'s details</h1>
 
 		<div class="form-group" id="q10">
       		<label class="form-label" for="postcode">
-        		Consultant's Name
+        		<div id="consultant-name" style="display: inline;">...</div> Name
         		<span class="form-hint">For example, 'Dr Donald Blake'</span>
         		<input id="q10-a1" name="q10-a1" type="text" class="form-control" onkeyup="answer(this)">
-        		<br/>
       		</label>
    		 </div>
 
     	<div class="form-group" id="q11">
       		<label class="form-label" for="Consultantname">
-          		Hospital/Clinic Name
-          		<span class="form-hint">For example, 'Fforestfach Medical Centre'</span>
+          	Hospital/Clinic Name
+          	<span class="form-hint">For example, 'Fforestfach Medical Centre'</span>
         		<input id="q11-a1" name="q10-a1" type="text" class="form-control" onkeyup="answer(this)">
-          		<br/>
       		</label>
    		</div>
 
@@ -46,16 +44,34 @@
       		<label class="form-label" for="postcode">
         		Postcode
         		<span class="form-hint">For example, 'SA5 8ET'</span>
-        		<input id="q12-a1" name="q10-a1" type="text" class="form-control" onkeyup="answer(this)" style="text-transform: uppercase;">
-       			<br/>
+        		<input id="q12-a1" name="q10-a1" type="text" maxlength="8 class="form-control" onkeyup="answer(this)" style="text-transform: uppercase; width: auto;">
       		</label>
     	</div>                            
 
+      <div class="form-group" id="q8">
+        <label class="form-label" for="postcode" id="q8-a1-label">
+          Consultant's Phone Number
+        <span class="form-hint">
+          For example, '01792 123456'
+        </span>
+        <input id="q8-a1" name="q8-a1" type="tel" maxlength="11" class="form-control" style="width: auto;" />
+        <br/>
+      </label>
+    </div>
+
 	</div>
 
-	<a class="button" href="consultant-contact">Continue</a>
+	<a class="button" href="personal-details">Continue</a>
 
 <script>
+
+var titleText = 'consultant';
+if(sessionStorage.medicalProfessional) {
+  titleText = sessionStorage.medicalProfessional;
+}
+
+document.getElementById('healthcare-professional').innerHTML = titleText;
+document.getElementById('consultant-name').innerHTML = titleText;
 
 document.getElementById('q10-a1').focus();
 

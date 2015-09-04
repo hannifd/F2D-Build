@@ -51,9 +51,9 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        go('hypoglycaemia-warning-symptoms');
+        go('insulin-declaration');
       } else if (value == 'N') {
-        go('hypoglycaemia-warning-symptoms');
+        go('insulin-declaration');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
