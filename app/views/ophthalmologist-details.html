@@ -22,11 +22,10 @@
 
 	<div class="form-group">
 
-		<h1 class="heading-large">Your <div id="healthcare-professional" style="display: inline;">...</div>'s details</h1>
-
+		<h1 class="heading-large">Your specialist eye doctor's details</h1>
 		<div class="form-group" id="q10">
       		<label class="form-label" for="postcode">
-        		<div id="consultant-name" style="display: inline;">...</div> Name
+        		Doctor Name
         		<span class="form-hint">For example, 'Dr Donald Blake'</span>
         		<input id="q10-a1" name="q10-a1" type="text" class="form-control" onkeyup="answer(this)">
       		</label>
@@ -64,11 +63,6 @@
 	<a class="button" href="summary">Continue</a>
 
 <script>
-
-var titleText = 'Consultant';
-if(sessionStorage.medicalProfessional) {
-  titleText = sessionStorage.medicalProfessional;
-}
 
 document.getElementById('healthcare-professional').innerHTML = titleText;
 document.getElementById('consultant-name').innerHTML = titleText;

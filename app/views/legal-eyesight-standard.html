@@ -74,12 +74,24 @@
     function validate() {
       var value = $('input[name=q3-answer]:checked').val();
 
+      var targetA = 'laser-treatment';
+      var targetB = 'laser-treatment';
+      var targetC = 'laser-treatment';
+
+      if(sessionStorage.condition) {
+        if(sessionStorage.condition == 'glaucoma') {
+          targetA = 'medical-consent-part-1';
+          targetB = 'medical-consent-part-1';
+          targetC = 'summary';
+        }
+      }
+
       if (value == 'Y') {
-        go('laser-treatment');
+        go(targetA);
       } else if (value == 'G') {
-        go('laser-treatment');
+        go(targetB);
       } else if (value == 'N') {
-        go('laser-treatment');
+        go(targetC);
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

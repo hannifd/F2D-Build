@@ -85,7 +85,13 @@
   $('#q2-error').hide();
 
   function next() {
-    go('medical-practitioner');
+    if(sessionStorage.condition) {
+      if(sessionStorage.condition == 'glaucoma') {
+        go('ophthalmologist-details');
+      } else {
+        go('medical-practitioner');
+      }
+    }
   }
 
   function validate() {
