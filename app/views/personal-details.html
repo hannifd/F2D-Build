@@ -28,7 +28,7 @@
     <label class="form-label" for="driver-number">
       Driving Licence Number
     </label>
-    <input class="form-control" id="driver-number" type="text" style="text-transform: uppercase;">
+    <input class="form-control" id="driver-number" type="text" style="text-transform: uppercase;" tabindex="1">
     <span class="form-hint">Example: MORGA753116SM9IJ</span>
 
     <p></p>
@@ -48,31 +48,31 @@
     <label class="form-label" for="first-name">
       First Name
     </label>
-    <input class="form-control" id="first-name" type="text">
+    <input class="form-control" id="first-name" type="text" tabindex="2">
 
     <label class="form-label" for="middle-names">
       Middle Name(s)
     </label>
-    <input class="form-control" id="middle-names" type="text">
+    <input class="form-control" id="middle-names" type="text" tabindex="3">
 
     <label class="form-label" for="last-name">
       Surname
     </label>
-    <input class="form-control" id="last-name" type="text">
+    <input class="form-control" id="last-name" type="text" tabindex="4">
 
     <label class="form-label" for="dob">
       Date of birth
     </label>
-    <input class="form-control" style="width: auto;" type="date" id="date-of-birth" value="" placeholder="25/12/1976" onkeyup="isValidateDate(this);"/>
+    <input class="form-control" style="width: auto;" type="date" id="date-of-birth" value="" placeholder="25/12/1976" onkeyup="isValidateDate(this);" tabindex="5"/>
 
     <label class="form-label" for="postcode">
       Postcode
     </label>
-    <input class="form-control" id="postcode" type="text" maxlength="8" style="text-transform: uppercase; width: auto;"/>
+    <input class="form-control" id="postcode" type="text" maxlength="8" style="text-transform: uppercase; width: auto;" tabindex="6"/>
 
   </div>
 
-  <a class="button" href="hypoglycaemia-symptoms">Continue</a>
+  <a class="button" href="hypoglycaemia-symptoms" tabindex="7">Continue</a>
 
 <script>
 
