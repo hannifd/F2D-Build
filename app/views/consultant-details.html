@@ -34,7 +34,7 @@
 
     	<div class="form-group" id="q11">
       		<label class="form-label" for="Consultantname">
-          	Hospital/Clinic Name
+          	<div id="facility-name" style="display: inline;">...</div> Name
           	<span class="form-hint">For example, 'Fforestfach Medical Centre'</span>
         		<input id="q11-a1" name="q10-a1" type="text" class="form-control" onkeyup="answer(this)">
       		</label>
@@ -70,8 +70,14 @@ if(sessionStorage.medicalProfessional) {
   titleText = sessionStorage.medicalProfessional;
 }
 
+var facilityName = 'Hospital/Clinic';
+if(titleText == 'GP') {
+  facilityName = 'Surgery';
+}
+
 document.getElementById('healthcare-professional').innerHTML = titleText;
 document.getElementById('consultant-name').innerHTML = titleText;
+document.getElementById('facility-name').innerHTML = facilityName;
 
 document.getElementById('q10-a1').focus();
 
