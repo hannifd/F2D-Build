@@ -28,22 +28,42 @@
       If you do not wish confirmation of your notification, leave the fields blank and continue.</p>
 		<div class="form-group" id="q8">
       <label class="form-label" for="postcode" id="q8-a1-label">
-        Consultant's Phone Number
+        <span class="heading-medium">Your email address</span>
         <span class="form-hint">
-          For example, '01792 123456'
+          For example, 'john@home.com'
         </span>
-        <input id="q8-a1" name="q8-a1" type="tel" maxlength="11" class="form-control"/>
+        <input id="q8-a1" name="q8-a1" type="email" maxlength="40" class="form-control"/>
         <br/>
       </label>
     </div>
 
+    <div class="form-group" id="q9">
+      <label class="form-label" for="postcode" id="q9-a1-label">
+        <span class="heading-medium">Your mobile phone number</span>
+        <span class="form-hint">
+          For example, '01792 123456'
+        </span>
+        <input id="q9-a1" name="q9-a1" type="tel" maxlength="11" class="form-control" style="width: auto;"/>
+        <br/>
+      </label>
+    </div>
 	</div>
 
-	<a class="button" href="personal-details">Continue</a>
+	<a class="button" href="javascript:next(this);">Continue</a>
 
 <script>
 
 document.getElementById('q8-a1').focus();
+
+function next(element) {
+  if(sessionStorage.condition) {
+    if(sessionStorage.condition == 'diabetes') {
+      go('hypoglycaemia-symptoms');
+    } else {
+      go('legal-eyesight-standard');
+    }
+  }
+}
 
 </script>
 
