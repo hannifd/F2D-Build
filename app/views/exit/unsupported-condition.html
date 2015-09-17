@@ -17,10 +17,12 @@
 <header class="page-header">
   <script>
     // Add condition to the title
+    /*
     $(document).ready(function() {
       $('#condition-heading').append(" for " + decodeURIComponent(QueryString.c));
       $('#condition-link').attr("href","https://www.gov.uk" + decodeURIComponent(QueryString.u));
     });
+    */
     
   </script>
 </header>
@@ -33,27 +35,13 @@
     <div class="grid-row" id="q1">
       <div class="column-two-thirds">
 
-        <h4 id="condition-heading" class="heading-xlarge">DVLA notification form</h4>
+        <!--h4 id="condition-heading" class="heading-xlarge">DVLA notification form</h4-->
+        <h4 id="condition-heading" class="heading-xlarge">Tell us about this condition</h4>
         
-        <p>The DVLA online notification service doesn’t currently support this medical condition.</p>
+        <p>This service is relatively new with limited functionality and you are currently not able to tell us about this condition.</p>
         
-        <p>Instead, download and complete the <a id="condition-link" href="https://www.gov.uk" rel="external">paper form</a> &ndash; then post it to the DVLA.</p>
+        <p>Instead, please click the link <a id="condition-link" href="https://www.gov.uk/health-conditions-and-driving" rel="external">Health Conditions and Driving</a> to find out what you need to do.</p>
         
-        <!--<p>You can still tell the DVLA about your medical condition using by completing and returning a paper form. Read <a href="https://www.gov.uk/condition-and-driving" rel="external">X and Driving</a> for more information.</p>-->
-        
-        <details>
-          <summary>
-            <span class="summary">
-              Why can’t I use the online service?
-            </span>
-          </summary>
-          <div class="panel-indent">
-            <p>This service is currently in the alpha phase. This means that the service is relatively new, with limited functionality.</p>
-            <p>Please check back when you next complete your application to see if the condition is available online.</p>
-          </div>
-        </details>
-  
-
       </div>
     </div>
 

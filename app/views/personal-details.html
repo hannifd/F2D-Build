@@ -37,7 +37,7 @@
       <summary><span class="summary">I don't know my driving licence number</span></summary>
         <div class="panel-indent">
           <p>
-            If you do not know your driving licence number, you can find it by following the link below:
+            If you do not know your driving licence number, you can find it here:
           </p>
           <p>
             <a href="https://www.gov.uk/view-driving-licence" target="_new" rel="external">View my driving licence</a>
@@ -60,19 +60,31 @@
     </label>
     <input class="form-control" id="last-name" type="text" tabindex="4">
 
+    <label class="form-label" for="gender">
+      Gender
+        <div class="form-group" id="gender">
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="" style="display: inline;">Male
+          </label>
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="" style="display: inline;">Female
+          </label>
+        </div>
+    </label>
+
     <label class="form-label" for="dob">
       Date of birth
     </label>
-    <input class="form-control" style="width: auto;" type="date" id="date-of-birth" value="" placeholder="25/12/1976" onkeyup="isValidateDate(this);" tabindex="5"/>
+    <input class="form-control" style="width: auto;" type="date" id="date-of-birth" value="" placeholder="25/12/1976" onkeyup="isValidateDate(this);" tabindex="7"/>
 
     <label class="form-label" for="postcode">
       Postcode
     </label>
-    <input class="form-control" id="postcode" type="text" maxlength="8" style="text-transform: uppercase; width: auto;" tabindex="6"/>
+    <input class="form-control" id="postcode" type="text" maxlength="8" style="text-transform: uppercase; width: auto;" tabindex="8"/>
 
   </div>
 
-  <a class="button" href="javascript:next(this);" tabindex="7">Continue</a>
+  <a class="button" href="javascript:next(this);" tabindex="9">Continue</a>
 
 <script>
 
