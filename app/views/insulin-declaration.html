@@ -16,31 +16,39 @@
 
 <header class="page-header">
 
-<script>
-
-function next() {
-  go('hypoglycaemia-warning-symptoms');
-}
-
-function handle(element) {
-  document.getElementById('continue').disabled = (!(element.checked));
-}
-
-</script>
-
 </header>
 
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
+
+  <form id="mmed-form" action="medical-form" method="get" class="form inline">
     
   <h1 class="heading-xlarge form-title">
-    Insulin declaration
+    Blood Glucose/Sugar Testing
   </h1>
-  
-  <form action="medical-form" method="get" class="form">
-    
-    <div class="grid-row content-block" id="qq" style="display: block;">
-      <div class="column-two-thirds">
+      
+    <div class="grid-row">
+      <div class="column-full">
+        As you are a driver with insulin-treated diabetes, you need to carry out appropriate blood glucose/sugar testing.
+
+        <h4 class="heading-large">Do you test your blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the journey and every 2 hours while driving)?</h4>
+
+        <div class="form-group" id="question">
+          <legend>
+            <span class="error-message" style="display: none;">
+              Please select a valid option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q7-a1" id="q7-a1-label">
+            <input id="q7-a1" type="radio" name="q7-answer" value="Y">Yes
+          </label>
+          <label class="block-label" for="q7-a2" id="q7-a2-label">
+            <input id="q7-a2" type="radio" name="q7-answer" value="N">No
+          </label>
+        </div>
+
+        <!--
         <div class="important-notice">
           <p>Please read the following information carefully and tick the consent box:</p>
         </div>
@@ -54,20 +62,30 @@ function handle(element) {
               I have insulin treated diabetes and I understand the need to test my blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the first journey and every 2 hours while driving).
 		      </label>
         </div>
+        -->
 
       </div>
     </div>
     
     <div class="form-group">
-      <!--input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
-      <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="next();" disabled="true"/> 
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="validate();"> 
     </div>
     
-    <ul>
-      <li><a href="javascript:history.go(-1);">Back</a></li>
-    </ul>
-    
   </form>
+
+<script>
+
+  function validate() {
+      var value = $('input[name=q7-answer]:checked').val();
+      if(value) {
+        go('hypoglycaemia-warning-symptoms');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
+  }
+
+</script>
 
 </main>
 
