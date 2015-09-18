@@ -22,12 +22,12 @@
   {{>includes/phase_banner}}
 
   <div class="grid-row">
-    <div class="column-two-thirds">
+    <div class="column-full">
       <div class="form-group">
 
-        <h1 class="heading-large">Please read the following information and confirm you have understood</h1>
+        <h1 class="heading-xlarge">Symptoms of Hypoglycaemia</h1>
 
-        <h3 class="heading-small">Hypoglycaemia causes symptoms such as</h3>
+        <h3 class="heading-small">As you are a driver with insulin-treated diabetes, you need to know what the symptoms of hypoglycaemia are. Examples are shown below.</h3>
         <ul class="list-bullet">
           <li>hunger</li>
           <li>shakiness</li>
@@ -49,11 +49,46 @@
         </ul>
       </div>
 
-      <a class="button" href="hypoglycaemia-episode">I understand</a>
+        <div class="form-group" id="question">
+          <legend>
+            <span class="error-message" style="display: none;">
+              Please select a valid option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q15-a1" id="q15-a1-label">
+            <input id="q15-a1" type="radio" name="q15-answer" value="Y">
+            I know the symptoms
+          </label>
+          <label class="block-label" for="q15-a2" id="q15-a2-label">
+            <input id="q15-a2" type="radio" name="q15-answer" value="N">
+            I don't know the symptoms
+          </label>
+        </div>
+
+      <a class="button" href="javascript:validate(this);">Continue</a>
       <p></p>
 
     </div>
   </div>
+
+<script>
+
+  function validate(element) {
+     var value = $('input[name=q15-answer]:checked').val();
+      
+      if (value == 'Y') {
+          go('hypoglycaemia-episode');
+      } else if (value == 'N') {
+          //go('automatic-gears');
+          alert('Where should I go now?');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
+  }
+
+</script>
 
 </main>
 
