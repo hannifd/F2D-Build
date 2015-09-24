@@ -21,8 +21,6 @@
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <form id="mmed-form" action="medical-form" method="get" class="form inline">
-
     <div class="grid-row" id="q1">
       <div class="column-full">
 
@@ -36,16 +34,16 @@
           </legend>
           
           <label class="block-label" for="q7-a1" id="q7-a1-label">
-            <input id="q7-a1" type="radio" name="q7-answer" value="GP" onclick="answer(this)">GP
+            <input id="q7-a1" type="radio" name="q7-answer" value="GP">GP
           </label>
           <label class="block-label" for="q7-a2" id="q7-a2-label">
-            <input id="q7-a2" type="radio" name="q7-answer" value="GP" onclick="answer(this)">GP Nurse
+            <input id="q7-a2" type="radio" name="q7-answer" value="GP">GP Nurse
           </label>
           <label class="block-label" for="q7-a3" id="q7-a3-label">
-            <input id="q7-a3" type="radio" name="q7-answer" value="Consultant" onclick="answer(this)">Consultant
+            <input id="q7-a3" type="radio" name="q7-answer" value="Consultant">Consultant
           </label>
           <label class="block-label" for="q7-a4" id="q7-a4-label">
-            <input id="q7-a4" type="radio" name="q7-answer" value="Consultant" onclick="answer(this)">Nurse Specialist
+            <input id="q7-a4" type="radio" name="q7-answer" value="Consultant">Nurse Specialist
           </label>
 
         </div>
@@ -55,8 +53,6 @@
     <div class="form-group">
       <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="validate();"> 
     </div>
-
-  </form>
 
 <script>
   
