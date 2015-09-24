@@ -52,9 +52,11 @@
       var value = $('input[name=q3-answer]:checked').val();
 
       if (value == 'Y') {
-        go('hypoglycaemia-severe-episodes');
+        //go('hypoglycaemia-severe-episodes');
+        go('hypoglycaemia-symptoms');
       } else if (value == 'N') {
-        go('legal-eyesight-standard');
+        //go('legal-eyesight-standard');
+        go('insulin-declaration');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

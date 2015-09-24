@@ -26,7 +26,8 @@
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-large">Do you know what the symptoms of hypoglycaemia are?</h4>
+        <!--h4 class="heading-large">Do you know what the symptoms of hypoglycaemia are?</h4-->
+        <h4 class="heading-large">Do you get symptoms of hypoglycaemia?</h4>
 
       </div>
     </div>
@@ -64,9 +65,9 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        go('hypoglycaemia-episode?flow={{flow}}&conditions={{conditions}}');
+        go('hypoglycaemia-severe-episodes');
       } else if (value == 'N') {
-        go('hypoglycaemia-symptoms-information');
+        go('hypoglycaemia-severe-episodes');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

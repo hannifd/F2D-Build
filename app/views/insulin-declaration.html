@@ -79,7 +79,8 @@
   function validate() {
       var value = $('input[name=q7-answer]:checked').val();
       if(value) {
-        go('hypoglycaemia-warning-symptoms');
+        //go('hypoglycaemia-warning-symptoms');
+        go('legal-eyesight-standard');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
