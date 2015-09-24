@@ -2,3 +2,16 @@
     <p><strong class="phase-tag">ALPHA</strong><span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
     </p>
   </div>
+  <div id="back-button" class="starthidden">
+  	<br/>
+  		<a href="javascript:history.go(-1);">&laquo; Back</a>
+  	<br/>
+  </div>
+
+  <script>
+
+  if(sessionStorage.condition) {
+  	document.getElementById('back-button').style.display = 'block';
+  }
+
+  </script>
