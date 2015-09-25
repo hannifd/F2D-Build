@@ -67,7 +67,7 @@
       if (value == 'Y') {
         go('car-bike-moped');
       } else if (value == 'N') {
-        go('decision-point');
+        check_end_flow();
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

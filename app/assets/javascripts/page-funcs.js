@@ -249,3 +249,14 @@ function set_checkbox(answer) {
 	element.checked = true;
 }
 
+function check_end_flow() {
+	if(!(sessionStorage.laserTreatment && sessionStorage.healthcareProfessional)) {
+		return;
+	}
+
+	if((sessionStorage.laserTreatment == 'N') && (sessionStorage.healthcareProfessional =='Y')) {
+		go('summary');
+	} else {
+		go('medical-consent-part-1');
+	}
+}
