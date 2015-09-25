@@ -1,0 +1,44 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+<script>
+
+var laser = sessionStorage.laserTreatment;
+var health = sessionStorage.healthcareProfessional;
+
+//alert('Laser Treatment: '+laser+', Healthcare Professional: '+health);
+
+if(laser == 'N' && health =='Y') {
+	// End 1
+	go('summary');
+} else {
+	// End 2
+	go('medical-consent-part-1');
+}
+
+</script>
+
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

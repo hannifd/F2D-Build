@@ -58,9 +58,11 @@
       var value = $('input[name=q1-answer]:checked').val();
       
       if (value == 'Y') {
-        go('summary');
+        sessionStorage.healthcareProfessional = value;
+        go('automatic-gears');
       } else if (value == 'N') {
-        go('medical-consent-part-1');
+        sessionStorage.healthcareProfessional = value;
+        go('automatic-gears');
       } else {
         $('#question').addClass('error');
         $('.error-message').show();

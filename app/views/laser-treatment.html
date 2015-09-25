@@ -56,21 +56,21 @@
   function validate() {
       var value = $('input[name=q1-answer]:checked').val();
       
-      //alert('Condition = ['+sessionStorage.condition+']');
-
       if (value == 'Y') {
+        sessionStorage.laserTreatment = value;
+
         if(sessionStorage.condition == 'glaucoma') {
-          go('vision-condition');
+          go('healthcare-professional');
         } else {
-          //go('healthcare-professional');
-          go('automatic-gears');
+          go('healthcare-professional');
         }
       } else if (value == 'N') {
+        sessionStorage.laserTreatment = value;
+
         if(sessionStorage.condition == 'glaucoma') {
           go('vision-condition');
         } else {
-          //go('healthcare-professional');
-          go('automatic-gears');
+          go('healthcare-professional');
         }
       } else {
         $('#question').addClass('error');
