@@ -1,0 +1,179 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+<style type="text/css">
+
+.border-bottom-summary {
+  padding-right: -15px;
+  border-width: 1px;
+  border-color: #c0c0c0;
+  border-bottom-style: solid;
+  margin: 0 0px;
+}
+
+</style>
+
+<script>
+
+function changeText(name) {
+  try {
+    hide(name+'-text');
+    show(name+'-edit');
+
+    document.getElementById(name).focus();
+
+    hide(name+'-change');
+    show(name+'-update');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function updateText(name) {
+  try {
+    var newValue = document.getElementById(name).value;
+    document.getElementById(name+'-text').innerHTML = newValue;
+
+    hide(name+'-edit');
+    show(name+'-text');
+
+    hide(name+'-update');
+    show(name+'-change');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function next() {
+  window.location.href = 'confirm';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
+
+</script>
+
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <h2 class="heading-large">
+    Your personal details
+  </h2>
+
+  <span class="form-hint">
+    The following details are currently held on your driving licence
+  </span> 
+
+  <br/>
+
+  <div id="blueBar"></div>
+   
+       
+    <!-- Driving Licence Number -->
+    <div class="grid-row border-bottom-summary">
+
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Driving licence number</div >
+      </div>
+
+      <div class="column-half">
+        <div  class="bold-small summary-text">
+          <div id="driving-licence-number-text" class="">
+            MORGA753116SM9IJ
+          </div>
+          <div id="driving-licence-number-edit" class="starthidden">
+            <input type="text" id="driving-licence-number" name="driving-licence-number" value="MORGA753116SM9IJ" size="25" />
+          </div>
+        </div >
+      </div>
+
+      <div class="column-quarter"> 
+        &nbsp;
+      </div>
+
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Name</div >
+      </div>
+
+      <div class="column-half">
+        <div  class="bold-small summary-text">
+          <div id="name-text" class="">
+            Mrs Emily Lines
+          </div>
+          <div id="name-edit" class="starthidden">
+            <input type="text" id="name" name="name" value="Mrs Emily Lines" size="25" />
+          </div>
+        </div >
+      </div>
+
+      <div class="column-quarter"> 
+        &nbsp;
+      </div>
+
+    </div>
+       
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Address</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">
+          <div id="address-line-1">86 Tanylan Road</div>
+          <div id="address-line-2">Morriston</div>
+          <div id="address-line-3">SWANSEA</div>
+          <span class="postcode">SA6 7DU</span>
+        </div>
+      </div>
+    </div>
+  
+    <br>
+    
+
+    <br/>
+
+    <div class="grid-row"> </div>
+
+
+    <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();">Continue</button>
+    
+  </div>
+
+<script>
+
+if(sessionStorage.condition) document.getElementById('condition').innerHTML = sessionStorage.condition;
+
+</script>
+
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
