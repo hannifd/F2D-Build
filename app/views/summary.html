@@ -178,7 +178,12 @@ function handle(element) {
         <div class="light-small summary-title">Address</div>
       </div>
       <div class="column-half">
-        <div  class="bold-small summary-text">86 Tanylan Road, Morriston, SWANSEA, <span class="postcode">SA6 7DU</span></div >
+        <div  class="bold-small summary-text" id="address" style="text-transform: capitalize;">86 Tanylan Road, Morriston, SWANSEA, SA6 7DU</div >
+      </div>
+      <div class="column-quarter"> 
+        <div id="name-change" class="light-small summary-title" style="text-align: right;">
+          <a href="change-address">Change?</a>
+        </div >
       </div>
     </div>
   
@@ -317,7 +322,28 @@ function handle(element) {
 
 <script>
 
-if(sessionStorage.condition) document.getElementById('condition').innerHTML = sessionStorage.condition;
+if(sessionStorage.condition) {
+  document.getElementById('condition').innerHTML = sessionStorage.condition;
+}
+
+if(sessionStorage.addressLine1) {
+  var address = sessionStorage.addressLine1;
+  if(sessionStorage.addressLine2) {
+    address += ', '+sessionStorage.addressLine2;
+  }
+  if(sessionStorage.addressLine3) {
+    address += ', '+sessionStorage.addressLine3;
+  }
+  if(sessionStorage.postTown) {
+    address += ', '+sessionStorage.postTown;
+  }
+  if(sessionStorage.postCode) {
+    address += ', '+sessionStorage.postCode;
+  }
+
+  document.getElementById('address').innerHTML = address;
+
+}
 
 </script>
 

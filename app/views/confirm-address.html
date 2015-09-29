@@ -27,50 +27,6 @@
 
 </style>
 
-<script>
-
-function changeText(name) {
-  try {
-    hide(name+'-text');
-    show(name+'-edit');
-
-    document.getElementById(name).focus();
-
-    hide(name+'-change');
-    show(name+'-update');
-
-  } catch(e) {
-    alert(e.errorMessage);
-  }
-}
-
-function updateText(name) {
-  try {
-    var newValue = document.getElementById(name).value;
-    document.getElementById(name+'-text').innerHTML = newValue;
-
-    hide(name+'-edit');
-    show(name+'-text');
-
-    hide(name+'-update');
-    show(name+'-change');
-
-  } catch(e) {
-    alert(e.errorMessage);
-  }
-}
-
-function next() {
-  window.location.href = 'confirm';
-}
-
-function handle(element) {
-  document.getElementById('continue').disabled = (!(element.checked));
-}
-
-</script>
-
-
 </header>
 
 <main id="page-container" role="main">
@@ -152,19 +108,56 @@ function handle(element) {
   
     <br>
     
+    <div class="grid-row" id="q1">
+      <div class="column-full">
+
+        <h4 class="heading-large">Is the address on your driving licence correct?</h4>
+        
+        <form>
+
+        <div class="form-group" id="question">
+          <legend>
+            <span class="error-message" style="display: none;">
+              Please select a valid option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="">Yes
+          </label>
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
+          </label>
+        </div>
+
+        </form>
+
+    </div>
+    </div>
 
     <br/>
 
     <div class="grid-row"> </div>
 
 
-    <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();">Continue</button>
+    <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="validate();">Continue</button>
     
   </div>
 
 <script>
 
-if(sessionStorage.condition) document.getElementById('condition').innerHTML = sessionStorage.condition;
+  function validate() {
+      var value = $('input[name=q1-answer]:checked').val();
+      
+      if (value == 'Y') {
+        go('hypoglycaemia-symptoms-information');
+      } else if (value == 'N') {
+        go('change-address');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
+  }
 
 </script>
 

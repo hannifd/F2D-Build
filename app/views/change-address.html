@@ -1,0 +1,94 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<div class="form-group" id="question">
+
+		<h1 class="heading-large">Enter your new address</h1>
+
+		<div class="form-group" id="q10">
+      		<label class="form-label" for="postcode">
+        		<div id="address-text">Address</div>
+        		<input id="q10-a1" name="q10-a1" type="text" class="form-control" style="text-transform: capitalize;">
+      		</label>
+   		 </div>
+
+    	<div class="form-group" id="q11">
+       		<input id="q11-a1" name="q11-a1" type="text" class="form-control" style="text-transform: capitalize;">
+   		</div>
+
+      <div class="form-group" id="q12">
+          <input id="q12-a1" name="q12-a1" type="text" class="form-control" style="text-transform: capitalize;">
+      </div>
+
+      <div class="form-group" id="q13">
+        <label class="form-label" for="postcode" id="q13-a1-label">
+          <div id="posttown-text">Post Town</div>
+          <input id="q13-a1" name="q13-a1" type="text" maxlength="30" class="form-control" style="width: auto; text-transform: capitalize;" />
+        </label>
+      </div>
+
+    	<div class="form-group" id="q14">
+      	<label class="form-label" for="postcode" id="q14-a1-label">
+          <div id="postcode-text">Postcode</div>
+        	<input id="q14-a1" name="q14-a1" type="text" maxlength="8" class="form-control" style="text-transform: uppercase; width: auto;"/>
+      	</label>
+    	</div>                            
+
+	</div>
+
+	<a class="button" href="javascript:validate();">Continue</a>
+
+<script>
+
+document.getElementById('q10-a1').focus();
+
+if(sessionStorage.addressLine1) document.getElementById('q10-a1').value = sessionStorage.addressLine1;
+if(sessionStorage.addressLine2) document.getElementById('q11-a1').value = sessionStorage.addressLine2;
+if(sessionStorage.addressLine3) document.getElementById('q12-a1').value = sessionStorage.addressLine3;
+if(sessionStorage.postTown) document.getElementById('q13-a1').value = sessionStorage.postTown;
+if(sessionStorage.postCode) document.getElementById('q14-a1').value = sessionStorage.postCode;
+
+function validate() {
+  var a1 = document.getElementById('q10-a1').value;
+  var a2 = document.getElementById('q11-a1').value;
+  var a3 = document.getElementById('q12-a1').value;
+  var pt = document.getElementById('q13-a1').value;
+  var pc = document.getElementById('q14-a1').value;
+  if(a1.length > 0) sessionStorage.addressLine1 = a1; else sessionStorage.removeItem('addressLine1');
+  if(a2.length > 0) sessionStorage.addressLine2 = a2; else sessionStorage.removeItem('addressLine2');
+  if(a3.length > 0) sessionStorage.addressLine3 = a3; else sessionStorage.removeItem('addressLine3');
+  if(pt.length > 0) sessionStorage.postTown = pt; else sessionStorage.removeItem('postTown');
+  if(a1.length > 0) sessionStorage.postCode = pc; else sessionStorage.removeItem('postCode');
+
+  go('hypoglycaemia-symptoms-information');
+}
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
