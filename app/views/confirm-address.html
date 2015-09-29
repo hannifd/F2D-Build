@@ -149,8 +149,17 @@
   function validate() {
       var value = $('input[name=q1-answer]:checked').val();
       
+      if(!sessionStorage.condition) {
+        alert('No medical condition was selected.');
+        return;
+      }
+
       if (value == 'Y') {
-        go('hypoglycaemia-symptoms-information');
+        if(sessionStorage.condition == 'diabetes') {
+          go('hypoglycaemia-symptoms-information');
+        } else {
+          go('legal-eyesight-standard');
+        }
       } else if (value == 'N') {
         go('change-address');
       } else {
