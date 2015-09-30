@@ -20,51 +20,70 @@
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-	<div class="form-group">
+  <form id="my-form" class="inline">
 
-		<h1 class="heading-large">Contact details</h1>
+    <h1 class="heading-large">Would you like to receive a confirmation email?</h1>
 
-    <p>If you would like a confirmation email or text message of your notification and further status updates as your notification progresses, tell us your email address and/or phone number here. 
-      If you do not wish confirmation of your notification, leave the fields blank and continue.</p>
-		<div class="form-group" id="q8">
-      <label class="form-label" for="postcode" id="q8-a1-label">
-        <span class="heading-medium">Your email address</span>
-        <span class="form-hint">
-          For example, 'john@home.com'
-        </span>
-        <input id="q8-a1" name="q8-a1" type="email" maxlength="40" class="form-control"/>
-        <br/>
-      </label>
-    </div>
+      <div class="form-group" id="question">
+        <legend>
+          <span class="error-message" style="display: none;">
+            Please select a valid option
+          </span>
+        </legend>
+          
+        <label class="block-label" for="q1-a1" id="q1-a1-label">
+          <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="validate(this)">Yes
+        </label>
+        <label class="block-label" for="q1-a2" id="q1-a2-label">
+          <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="validate(this)">No
+        </label>
+      </div>
 
-    <div class="form-group" id="q9">
-      <label class="form-label" for="postcode" id="q9-a1-label">
-        <span class="heading-medium">Your mobile phone number</span>
-        <span class="form-hint">
-          For example, '01792 123456'
-        </span>
-        <input id="q9-a1" name="q9-a1" type="tel" maxlength="15" class="form-control" style="width: auto;"/>
-        <br/>
-      </label>
-    </div>
-	</div>
+		  <div class="form-group starthidden" id="q8">
+        <label class="form-label" for="postcode" id="q8-a1-label">
+          <span class="heading-medium">Your email address</span><br/>
+          <input id="q8-a1" name="q8-a1" type="email" maxlength="40" class="form-control"/>
+          <br/>
+        </label>
+      </div>
 
-	<a class="button" href="javascript:next(this);">Continue</a>
+	 <a class="button" href="javascript:next(this);">Continue</a>
+
+  </form>
 
 <script>
 
 document.getElementById('q8-a1').focus();
 
-function next(element) {
-  if(sessionStorage.condition) {
-    if(sessionStorage.condition == 'diabetes') {
-      //go('confirm-address');
-      go('hypoglycaemia-symptoms-information');
-    } else {
-      //go('confirm-address');
-      go('legal-eyesight-standard');
-    }
+function validate(element) {
+  if(element.value == 'Y') {
+    show('q8');
+    document.getElementById('q8-a1').focus();
+  } else {
+    hide('q8');
   }
+}
+
+function next(element) {
+      var value = $('input[name=q1-answer]:checked').val();
+      
+      if(!sessionStorage.condition) {
+        alert('No medical condition was selected.');
+        return;
+      }
+
+      if (value == 'Y') {
+        if(sessionStorage.condition == 'diabetes') {
+          go('hypoglycaemia-symptoms-information');
+        } else {
+          go('legal-eyesight-standard');
+        }
+      } else if (value == 'N') {
+        go('change-address');
+      } else {
+        $('#question').addClass('error');
+        $('.error-message').show();
+      } 
 }
 
 </script>
