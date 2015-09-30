@@ -79,11 +79,14 @@ function validate() {
   if(pt.length > 0) sessionStorage.postTown = pt; else sessionStorage.removeItem('postTown');
   if(a1.length > 0) sessionStorage.postCode = pc; else sessionStorage.removeItem('postCode');
 
+  /*
   if(sessionStorage.condition == 'diabetes') {
     go('hypoglycaemia-symptoms-information');
   } else {
     go('legal-eyesight-standard');
   }
+  */
+  go('contact-details');
 }
 
 </script>
