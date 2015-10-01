@@ -76,12 +76,12 @@
   <div class="grid-row" id="q1">
     <div class="column-full">
       <div class="form-group">
-        <h1 class="heading-large">What condition are you telling us about?</h1>
+        <h1 class="heading-large">Your condition</h1>
 
         <form onsubmit="return process();">
           <div id="condition-question">
             <legend>
-              <span class="error-message" style="display: none;">Please enter a valid condition</span>
+              <span class="error-message" style="display: none;">Enter your condition</span>
             </legend>
 
 
@@ -328,7 +328,7 @@ treated" info-url="/diabetes-driving">Diabetes</option>
           <button style="margin-top: .5em;" class="button" type="button" onclick="process();">Continue</button>
         </form>
 
-        <details style="margin-top: 1em;">
+        <!--details style="margin-top: 1em;">
           <summary>
             <span class="summary">
               Why can’t I choose more than one condition?
@@ -338,8 +338,11 @@ treated" info-url="/diabetes-driving">Diabetes</option>
             <p>This service is currently in the alpha phase. This means that the service is relatively new, with limited functionality.</p>
             <p>If you would like to report more than one condition, please download and complete the <a id="condition-link" href="https://www.gov.uk/health-conditions-and-driving" rel="external">paper forms</a> &ndash; then post them to the DVLA.</p>
           </div>
-        </details>
+        </details-->
 
+        <br/>
+        <p>You can't use this service to tell us about more than one condition.</p>
+        <p><a id="condition-link" href="https://www.gov.uk/health-conditions-and-driving" rel="external" target="_new">Find out how to</a></p>
       </div>
     </div>
   </div>
