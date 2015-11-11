@@ -935,36 +935,26 @@ table th {
   vertical-align: top; }
   .button:visited {
     background-color: #00823b; }
-  .button:hover,
-  .button:focus {
+  .button:hover, .button:focus {
     background-color: #00692f; }
   .button:active {
     top: 2px;
     -webkit-box-shadow: 0 0 0 #00823b;
     -moz-box-shadow: 0 0 0 #00823b;
     box-shadow: 0 0 0 #00823b; }
-  .button.disabled,
-  .button[disabled="disabled"],
-  .button[disabled] {
+  .button.disabled, .button[disabled="disabled"], .button[disabled] {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5; }
-    .button.disabled:hover,
-    .button[disabled="disabled"]:hover,
-    .button[disabled]:hover {
+    .button.disabled:hover, .button[disabled="disabled"]:hover, .button[disabled]:hover {
       cursor: default;
       background-color: #00823b; }
-    .button.disabled:active,
-    .button[disabled="disabled"]:active,
-    .button[disabled]:active {
+    .button.disabled:active, .button[disabled="disabled"]:active, .button[disabled]:active {
       top: 0;
       -webkit-box-shadow: 0 2px 0 #003518;
       -moz-box-shadow: 0 2px 0 #003518;
       box-shadow: 0 2px 0 #003518; }
-  .button:link,
-  .button:hover,
-  .button:focus,
-  .button:visited {
+  .button:link, .button:hover, .button:focus, .button:visited {
     color: #fff; }
   .button:before {
     content: "";
@@ -1007,7 +997,7 @@ table th {
     .button-get-started {
       font-size: 18px;
       line-height: 1.2; } }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20/10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .button-get-started {
       background-image: url("../images/icons/icon-pointer-2x.png");
       background-size: 30px 19px; } }
@@ -1128,36 +1118,26 @@ ol {
   font-weight: 400; }
   .button-secondary:visited {
     background-color: #dee0e2; }
-  .button-secondary:hover,
-  .button-secondary:focus {
+  .button-secondary:hover, .button-secondary:focus {
     background-color: #d0d3d6; }
   .button-secondary:active {
     top: 2px;
     -webkit-box-shadow: 0 0 0 #dee0e2;
     -moz-box-shadow: 0 0 0 #dee0e2;
     box-shadow: 0 0 0 #dee0e2; }
-  .button-secondary.disabled,
-  .button-secondary[disabled="disabled"],
-  .button-secondary[disabled] {
+  .button-secondary.disabled, .button-secondary[disabled="disabled"], .button-secondary[disabled] {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5; }
-    .button-secondary.disabled:hover,
-    .button-secondary[disabled="disabled"]:hover,
-    .button-secondary[disabled]:hover {
+    .button-secondary.disabled:hover, .button-secondary[disabled="disabled"]:hover, .button-secondary[disabled]:hover {
       cursor: default;
       background-color: #dee0e2; }
-    .button-secondary.disabled:active,
-    .button-secondary[disabled="disabled"]:active,
-    .button-secondary[disabled]:active {
+    .button-secondary.disabled:active, .button-secondary[disabled="disabled"]:active, .button-secondary[disabled]:active {
       top: 0;
       -webkit-box-shadow: 0 2px 0 #b5babe;
       -moz-box-shadow: 0 2px 0 #b5babe;
       box-shadow: 0 2px 0 #b5babe; }
-  .button-secondary:link,
-  .button-secondary:hover,
-  .button-secondary:focus,
-  .button-secondary:visited {
+  .button-secondary:link, .button-secondary:hover, .button-secondary:focus, .button-secondary:visited {
     color: #0b0c0c; }
   .button-secondary:before {
     content: "";
@@ -1348,6 +1328,55 @@ ol {
     #content {
       padding-bottom: 90px; } }
 
+.application-confirmation {
+  text-align: center;
+  padding: 1.5em 0 1.5em 0em;
+  background: #28A297;
+  color: White;
+  margin: 0 0 1.5em 0; }
+
+@media (max-width: 640px) {
+  .application-confirmation {
+    margin: 1em 0 1.5em 0; } }
+
+.application-confirmation h1 {
+  font-size: 200%;
+  padding: 0;
+  margin: 0;
+  font-weight: bold; }
+
+@media (max-width: 640px) {
+  .application-confirmation h1 {
+    font-size: 150%; } }
+
+.application-confirmation h2 {
+  font-size: 130%;
+  padding: 0;
+  margin: 0;
+  margin-top: 1em; }
+
+@media (max-width: 640px) {
+  .application-confirmation h2 {
+    font-size: 100%; } }
+
+.for-desktop {
+  margin: 2em 0;
+  display: block; }
+
+@media (max-width: 640px) {
+  .for-desktop {
+    margin: 1em 0;
+    display: none; } }
+
+.for-mobile {
+  margin: 2em 0;
+  display: none; }
+
+@media (max-width: 640px) {
+  .for-mobile {
+    margin: 1em 0;
+    display: block; } }
+
 #content h1 {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
@@ -1469,36 +1498,26 @@ ol {
   font-weight: 400; }
   .button-secondary:visited {
     background-color: #dee0e2; }
-  .button-secondary:hover,
-  .button-secondary:focus {
+  .button-secondary:hover, .button-secondary:focus {
     background-color: #d0d3d6; }
   .button-secondary:active {
     top: 2px;
     -webkit-box-shadow: 0 0 0 #dee0e2;
     -moz-box-shadow: 0 0 0 #dee0e2;
     box-shadow: 0 0 0 #dee0e2; }
-  .button-secondary.disabled,
-  .button-secondary[disabled="disabled"],
-  .button-secondary[disabled] {
+  .button-secondary.disabled, .button-secondary[disabled="disabled"], .button-secondary[disabled] {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5; }
-    .button-secondary.disabled:hover,
-    .button-secondary[disabled="disabled"]:hover,
-    .button-secondary[disabled]:hover {
+    .button-secondary.disabled:hover, .button-secondary[disabled="disabled"]:hover, .button-secondary[disabled]:hover {
       cursor: default;
       background-color: #dee0e2; }
-    .button-secondary.disabled:active,
-    .button-secondary[disabled="disabled"]:active,
-    .button-secondary[disabled]:active {
+    .button-secondary.disabled:active, .button-secondary[disabled="disabled"]:active, .button-secondary[disabled]:active {
       top: 0;
       -webkit-box-shadow: 0 2px 0 #b5babe;
       -moz-box-shadow: 0 2px 0 #b5babe;
       box-shadow: 0 2px 0 #b5babe; }
-  .button-secondary:link,
-  .button-secondary:hover,
-  .button-secondary:focus,
-  .button-secondary:visited {
+  .button-secondary:link, .button-secondary:hover, .button-secondary:focus, .button-secondary:visited {
     color: #0b0c0c; }
   .button-secondary:before {
     content: "";
@@ -1593,7 +1612,7 @@ ol {
   -webkit-transform-origin: 0 0; }
 
 .heading-xlarge {
-  margin: 1em 0 0.5em; }
+  margin: 1em 0 .5em; }
 
 .need {
   margin: 2em 0; }
@@ -1812,7 +1831,7 @@ ol {
     font-size: 18px;
     line-height: 2.64706; } }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20/10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .js-tab-content .programme-progression li a,
   .js-tab-content .programme-progression li h1,
   .js-tab-content .js-heading-tab a,
@@ -1954,19 +1973,19 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   border: 1px solid #dee0e2;
   background: #dee0e2 url(../images/icons/accordian-arrow.png) no-repeat 0.1em 0.1em;
   margin: 30px 0 0 0;
-  padding: 0.75em 1em 0.75em 2.5em;
+  padding: .75em 1em .75em 2.5em;
   cursor: pointer;
   position: relative; }
   @media (min-width: 641px) {
     #accordion h3 {
-      background-position: 0.2em 0.5em;
+      background-position: .2em .5em;
       padding-left: 2em; } }
 
 #accordion h3.ui-accordion-header-active {
   background-position: 0 -2.5em; }
   @media (min-width: 641px) {
     #accordion h3.ui-accordion-header-active {
-      background-position: 0.2em -1.5em; } }
+      background-position: .2em -1.5em; } }
 
 #accordion h3:after {
   position: absolute;

@@ -42,7 +42,27 @@ module.exports = {
 
     app.get('/confirmation', function (req, res) {
       res.render('confirmation', {'assetPath' : assetPath})
+    }); 
+
+
+    /* - - - - - - - - - - - - - - - - - - - */
+    /* Chooser for Basic Branching control   */
+
+
+    app.get('/branch', function (req, res) {
+
+    
+
+    var branch = req.query.branch;
+    /* this line pulls out the name of the branch from the input buttons */
+
+    res.render(branch, {'assetPath' : assetPath});
+    /* this line renders a new page based on the HTML of the filename + branchname  */
+    
+ 
     });
+    /* ends the app.get javascript function */
+
   }
 
 };

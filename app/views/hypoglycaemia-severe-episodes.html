@@ -21,7 +21,8 @@
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <h4 class="heading-large">Have you had two or more episodes of hypoglycaemia needing assistance from another person, in the last 12 months? </h4>
+  <h4 class="heading-large">In the last 12 months have you had an episode of            
+hypoglycaemia, requiring assistance from another person? </h4>
 
   <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
 
@@ -32,13 +33,37 @@
       </span>
     </legend>
     <fieldset class="inline" id="q3">
-      <label class="block-label" for="q3-a1" id="q3-a1-label">
+      <label class="block-label" for="q3-a1" id="q3-a1-label"data-target="Reasons">
         <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="">Yes
       </label>
       <label class="block-label" for="q3-a2" id="q3-a2-label">
         <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="">No
-      </label>
+  
+    </label>
     </fieldset>
+
+
+          <br clear="all">
+
+    <div class="panel-indent js-hidden" id="Reasons" style="margin-top:1em">
+
+    <p style="max-width:620px">How many?</p>
+      
+       <label for="radio-inline-1" class="block-label">
+      <input id="radio-inline-1" type="radio"  name="paynum" value="4">
+      One
+      </label>
+
+      <br clear="all">
+      
+
+      <label for="radio-inline-2" class="block-label">
+      <input id="radio-inline-2" type="radio"  name="paynum" value="1">
+      Two or more
+      </label>
+
+    
+  </div>
   </div>
 
 
