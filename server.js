@@ -17,7 +17,7 @@ var express = require('express'),
 //     app.use(express.basicAuth(username, password));
 //   }
   //app.use(express.basicAuth(username, password));
-}
+//}
 
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
