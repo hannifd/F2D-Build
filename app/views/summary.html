@@ -63,7 +63,7 @@ function updateText(name) {
 function next() {
   sessionStorage.removeItem('condition');
 
-  window.location.href = 'confirm';
+  window.location.href = 'final-page';
 }
 
 function handle(element) {
@@ -78,7 +78,7 @@ function handle(element) {
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <h2 class="heading-medium process-step">
+  <!-- <h2 class="heading-medium process-step">
     Summary
   </h2>
   <h1 class="heading-xlarge process-heading">
@@ -91,13 +91,13 @@ function handle(element) {
         &nbsp;&nbsp;&nbsp;
         <img src="{{assetPath}}images/icons/icon-email.png" width="20" height="20"/> <a href="#">Email summary</a>
       </div>
-  </div>
+  </div> -->
 
   <br/>
 
   <div id="blueBar"></div>
    
-    <div><h2 class="heading-large">Your details</h2> </div>
+    <div><h2 class="heading-large">Check Your details</h2> </div>
 
        
     <!-- Driving Licence Number -->

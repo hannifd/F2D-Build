@@ -45,13 +45,11 @@ module.exports = {
     }); 
 
 
+
+
     /* - - - - - - - - - - - - - - - - - - - */
     /* Chooser for Basic Branching control   */
-
-
     app.get('/branch', function (req, res) {
-
-    
 
     var branch = req.query.branch;
     /* this line pulls out the name of the branch from the input buttons */
@@ -61,7 +59,27 @@ module.exports = {
     
  
     });
-    /* ends the app.get javascript function */
+
+
+    /* - - - - - - - - - - - - - - - - - - - */
+    /* Special case for: Diabetes / Insulin = Yes No   */
+    app.get('/branch-a', function (req, res) {
+
+    var branch = req.query.branch;
+    var q1 = req.query.q1answer;
+    /* this line pulls out the name of the branch from the input buttons */
+
+    if (q1 == "verify/verify-1") {
+      res.render(q1, {'assetPath' : assetPath});
+    } else{};
+
+    res.render(branch, {'assetPath' : assetPath});
+    /* this line renders a new page based on the HTML of the filename + branchname  */
+    
+ 
+    });
+
+
 
   }
 

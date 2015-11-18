@@ -21,7 +21,8 @@
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
 
-  <form id="mmed-form" action="branch" method="get" class="form inline">
+  <form id="mmed-form" action="branch-a" method="get" class="form inline">
+    <!-- specail case branch code here -->
 
     <div class="grid-row" id="q1">
       <div class="column-full">
@@ -37,10 +38,10 @@
           
           <fieldset>
             <label class="block-label" for="q1-a1" id="q1-a1-label">
-              <input id="q1-a1" type="radio" name="q1-answer" value="verify/verify-1" onclick="">Yes
+              <input id="q1-a1" type="radio" name="q1answer" value="verify/verify-1" onclick="">Yes
             </label>
             <label class="block-label" for="q1-a2" id="q1-a2-label" data-target="Reasons">
-              <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
+              <input id="q1-a2" type="radio" name="q1answer" value="N" onclick="">No
             </label>
           </fieldset>
 
@@ -101,7 +102,7 @@
 <script>
   
   function validate() {
-      var value = $('input[name=q1-answer]:checked').val();
+      var value = $('input[name=q1answer]:checked').val();
       
       if (value == 'Y') {
         sessionStorage.insulin = true;
