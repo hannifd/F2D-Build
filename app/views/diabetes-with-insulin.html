@@ -28,56 +28,60 @@
 
         <h4 class="heading-large">Do you treat your diabetes with insulin?</h4>
 
-        <div class="form-group" id="question">
+        <div class="form-group form-group-compound" id="question"> 
           <legend>
             <span class="error-message" style="display: none;">
               Select an option
             </span>
           </legend>
           
-          <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="branch" value="verify/verify-1" onclick="">Yes
-          </label>
-          <label class="block-label" for="q1-a2" id="q1-a2-label" data-target="Reasons">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
-          </label>
+          <fieldset>
+            <label class="block-label" for="q1-a1" id="q1-a1-label">
+              <input id="q1-a1" type="radio" name="q1-answer" value="verify/verify-1" onclick="">Yes
+            </label>
+            <label class="block-label" for="q1-a2" id="q1-a2-label" data-target="Reasons">
+              <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
+            </label>
+          </fieldset>
+
+        </div>
 
 
+
+        <br clear="all">
+
+        <div class="panel-indent js-hidden" id="Reasons" style="margin-top:1em">
+
+          <p style="max-width:620px">Which of the following do you use to control your diabetes?</p>
+            
+          <label for="radio-inline-1" class="block-label">
+            <input id="radio-inline-1" type="radio"  name="branch" value="diet-thank-you">
+            Diet only
+          </label>
+
+          <br clear="all">
+            
+
+          <label for="radio-inline-2" class="block-label">
+            <input id="radio-inline-2" type="radio"  name="branch" value="medication">
+            Tablets only
+          </label>
 
           <br clear="all">
 
-    <div class="panel-indent js-hidden" id="Reasons" style="margin-top:1em">
+          <label for="radio-inline-3" class="block-label">
+            <input id="radio-inline-3" type="radio"  name="branch" value="medication">
+            Tablets and diet
+          </label>
 
-    <p style="max-width:620px">Which of the following do you use to control your diabetes?</p>
-      
-       <label for="radio-inline-1" class="block-label">
-      <input id="radio-inline-1" type="radio"  name="branch" value="diet-thank-you">
-      Diet only
-      </label>
+          <br clear="all">
+            
 
-      <br clear="all">
-      
-
-      <label for="radio-inline-2" class="block-label">
-      <input id="radio-inline-2" type="radio"  name="branch" value="medication">
-      Tablets only
-      </label>
-
-      <br clear="all">
-
-<label for="radio-inline-3" class="block-label">
-      <input id="radio-inline-3" type="radio"  name="branch" value="medication">
-      Tablets and diet
-      </label>
-
-      <br clear="all">
-      
-
-      <label for="radio-inline-4" class="block-label">
-      <input id="radio-inline-4" type="radio"  name="branch" value="medication">
-      non-insulin injections
-    </label>
-  </div>
+          <label for="radio-inline-4" class="block-label">
+            <input id="radio-inline-4" type="radio"  name="branch" value="medication">
+            non-insulin injections
+          </label>
+        </div>
 
 
 
