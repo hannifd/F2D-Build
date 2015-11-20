@@ -1,4 +1,3 @@
-
 {{<govuk_template}}
 
 {{$head}}
@@ -26,20 +25,23 @@
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-large">Do you have glaucoma in both eyes, or your remaining eye (if you only have one eye)?</h4>
+       h1 class="heading-xlarge">Diabetic Eye Disease</h4-->
+        <!-- <h4 class="heading-large">Do you have glaucoma?</h4> -->
 
-        <div class="form-group" id="question">
+         
+
+        <!-- <div class="form-group" id="question">
           <legend>
             <span class="error-message" style="display: none;">
-              Please select a valid option
+              Select an option
             </span>
           </legend>
           
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="1" onclick="">Yes
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="2" onclick="">No
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
           </label>
         </div>
       </div>
@@ -50,9 +52,8 @@
     </div>
 
   </form> -->
-  <header class="page-header">
 
-</header>
+  </header>
 
 <main id="page-container" role="main">
   {{>includes/phase_banner}}
@@ -63,7 +64,7 @@
       <div class="column-full">
 
         <!--h1 class="heading-xlarge">Diabetic Eye Disease</h4-->
-        <h4 class="heading-large">How many functioning eyes do you have?</h4>
+        <h4 class="heading-large">Do you have glaucoma?</h4>
 
         <div class="form-group" id="question">
           <legend>
@@ -73,10 +74,10 @@
           </legend>
           
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="branch" value="laser-treatment-one-glau">One
+            <input id="q1-a1" type="radio" name="branch" value="verify/verify-2">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="branch" value="laser-treatment-two-glau">Two
+            <input id="q1-a2" type="radio" name="branch" value="exit/non-notifiable-condition">No
           </label>
         </div>
       </div>
@@ -90,15 +91,28 @@
 
   </form>
 
+ 
 <script>
   
   function validate() {
       var value = $('input[name=q1-answer]:checked').val();
       
-      if (value == '1') {
-        go('verify/verify-2');
-      } else if (value == '2') {
-        go('exit/non-notifiable-condition');
+      if (value == 'Y') {
+        sessionStorage.laserTreatment = value;
+
+        if(sessionStorage.condition == 'glaucoma') {
+          go('healthcare-professional');
+        } else {
+          go('healthcare-professional');
+        }
+      } else if (value == 'N') {
+        sessionStorage.laserTreatment = value;
+
+        if(sessionStorage.condition == 'glaucoma') {
+          go('vision-condition');
+        } else {
+          go('healthcare-professional');
+        }
       } else {
         $('#question').addClass('error');
         $('.error-message').show();
